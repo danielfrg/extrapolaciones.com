@@ -1,0 +1,20 @@
+{{ define "body" }}
+{{- partial "header.html" . -}}
+<div class="jumbotron">
+    <div class="container">
+      <h1>{{ .Site.Title }}</h1>
+      <h2>{{ $.Site.Params.description }}</h2>
+    </div>
+</div>
+
+<main>
+    <div class="posts container">
+        <div class="post-feed">
+            {{ range $index, $element := .Pages }}
+                {{- partial "post-card.html" (dict "context" . "index" $index "home" $.IsHome) -}}
+            {{ end }}
+        </div>
+    </div>
+</main>
+
+{{ end }}

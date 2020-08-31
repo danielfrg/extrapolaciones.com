@@ -1,0 +1,22 @@
+<header class="navbar navbar-expand">
+    <nav class="container">
+        <div class="navbar-nav-scroll">
+            <ul class="right-nav navbar-nav bd-navbar-nav flex-row" role="menu">
+                {{ range $.Site.Menus.main }}
+                <li class="nav-item" role="menuitem">
+                    <a href="{{ .URL }}">{{- .Name -}}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        <div class="navbar-nav ml-md-auto">
+            <ul class="left-nav navbar-nav bd-navbar-nav flex-row" role="menu">
+                {{ range $.Site.Menus.second }}
+                <li class="nav-item" role="menuitem">
+                    <a href="{{ .URL }}">{{- .Name -}}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </nav>
+</header>

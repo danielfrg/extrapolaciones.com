@@ -1,0 +1,31 @@
+title = "Extrapolaciones"
+baseURL = "https://extrapolaciones.com/"
+languageCode = "es"
+theme = "website"
+summaryLength = 25
+
+[params]
+  author = "Daniel Rodriguez"
+  description = "- entre -"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Inicio"
+    url = "/"
+    weight = 10
+#   [[menu.main]]
+#     identifier = "about"
+#     name = "About"
+#     url = "/about/"
+#     weight = 20
+  [[menu.second]]
+    identifier = "twitter"
+    name = "@danielfrg"
+    url = "https://twitter.com/danielfrg"
+    weight = 10
+  [[menu.footer]]
+    identifier = "twitter"
+    name = "Twitter"
+    url = "https://twitter.com/danielfrg"
+    weight = 10

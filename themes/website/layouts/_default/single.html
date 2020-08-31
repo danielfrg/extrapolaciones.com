@@ -1,0 +1,57 @@
+{{ define "body" }}
+
+{{- partial "header.html" $ -}}
+
+<main>
+    <div class="post container">
+
+        <article class="{{ if not (.Param "feature_image") }} no-image {{ end }}">
+
+            <header>
+
+                {{ with .Params.tags }}
+                    {{ $primaryTag := (index . 0) }}
+                    <section class="post-full-tags">
+                        <a href="{{ "/tags/" | relLangURL }}{{ $primaryTag | urlize }}">{{ $primaryTag }}</a>
+                    </section>
+                {{ end }}
+
+                <h1 class="post-full-title">{{ .Title }}</h1>
+
+                {{ if .Param "summary" }}
+                    <p class="summary">{{ .Summary }}</p>
+                {{ end }}
+
+                <div class="post-full-byline">
+                    <section class="post-card-byline-content">
+                        {{ if .Param "author" }}
+                            <span class="author">{{ .Param "author" }}</span>
+                        {{ end }}
+                        <div>
+                            <span class="post-card-byline-date"><time datetime="{{ .Date.Format "2006-31-01" }}">{{ .Date.Format "2 January 2006" }}</time>
+                            <span class="bull">&bull;</span> {{ .ReadingTime }} min read</span>
+                        </div>
+                    </section>
+                </div>
+            </header>
+
+            {{ if .Param "feature_image" }}
+            <figure class="post-full-image">
+                <img src="{{ .Param "feature_image" }}" alt="{{ .Title }}" />
+            </figure>
+            {{ end }}
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    {{ .Content }}
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+{{- partial "footer.html" $ -}}
+
+{{ end }}

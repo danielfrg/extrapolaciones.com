@@ -1,0 +1,21 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 mt-md-0 mt-3">
+                <section class="copyright"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> &copy; {{ .Date.Format "2006" }}</section>
+            </div>
+            <div class="col-md-6 mt-md-0 mt-3 text-right">
+                <nav class="site-footer-nav">
+                    <a href="{{ .Site.BaseURL }}">Latest Posts</a>
+                    {{ range $.Site.Menus.footer }}
+                        &bull; <a href="{{ .URL }}">{{- .Name -}}</a>
+                    {{ end }}
+                    {{ if .Site.Params.facebook }}<a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a>{{ end }}
+                    {{ if .Site.Params.twitter }}<a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener">Twitter</a>{{ end }}
+                    {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Github</a>{{ end }}
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
