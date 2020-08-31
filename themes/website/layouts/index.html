@@ -1,5 +1,6 @@
 {{ define "body" }}
 {{- partial "header.html" . -}}
+
 <div class="jumbotron">
     <div class="container">
       <h1>{{ .Site.Title }}</h1>
@@ -16,5 +17,7 @@
         </div>
     </div>
 </main>
+
+{{- partial "footer.html" $ -}}
 
 {{ end }}
