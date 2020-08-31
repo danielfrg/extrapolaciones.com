@@ -134,6 +134,11 @@ body {
         }
     }
 
+    .post-full-image img {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
     .post-full-content {
         position: relative;
         margin: 0 auto;

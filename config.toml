@@ -4,6 +4,9 @@ languageCode = "es"
 theme = "website"
 summaryLength = 25
 
+[permalinks]
+  articles = "articles/:year/:month/:title/"
+
 [params]
   author = "Daniel Rodriguez"
   description = "- entre -"

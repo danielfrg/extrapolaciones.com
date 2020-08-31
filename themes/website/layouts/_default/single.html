@@ -8,7 +8,6 @@
         <article class="{{ if not (.Param "feature_image") }} no-image {{ end }}">
 
             <header>
-
                 {{ with .Params.tags }}
                     {{ $primaryTag := (index . 0) }}
                     <section class="post-full-tags">

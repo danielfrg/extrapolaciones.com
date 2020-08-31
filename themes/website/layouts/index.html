@@ -11,7 +11,7 @@
 <main>
     <div class="posts container">
         <div class="post-feed">
-            {{ range $index, $element := .Pages }}
+            {{ range $index, $element := .Site.RegularPages }}
                 {{- partial "post-card.html" (dict "context" . "index" $index "home" $.IsHome) -}}
             {{ end }}
         </div>
