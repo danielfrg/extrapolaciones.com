@@ -13,6 +13,18 @@ jobs:
       - uses: actions/checkout@v2
       - run: git fetch --prune --unshallow
 
+      - name: Install node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: "12"
+
+      - name: Install deps
+        run: make npm-install
+
+      - name: Build website
+        run: |
+          make npm-build
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -20,7 +32,7 @@ jobs:
 
       - name: Build docs
         run: |
-          hugo
+          make hugo
 
       - name: Push docs (branch)
         uses: jsmrcaga/action-netlify-deploy@master
