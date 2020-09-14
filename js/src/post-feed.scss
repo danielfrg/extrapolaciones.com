@@ -78,6 +78,8 @@
     margin: 0 0 0.4em;
     line-height: 1.15em;
     transition: color 0.2s ease-in-out;
+    font-weight: 600;
+    letter-spacing: -2px;
 }
 
 .no-image .post-card-title {
@@ -93,7 +95,6 @@
 .post-card-excerpt {
     max-width: 56em;
     color: var(--midgrey);
-    font-family: "Inter", Georgia, serif;
 }
 
 .post-card-excerpt p {
