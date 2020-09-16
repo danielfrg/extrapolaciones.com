@@ -5,11 +5,14 @@ theme = "website"
 summaryLength = 25
 
 [permalinks]
-  articles = "articles/:year/:month/:title/"
+  articles = "posts/:year/:month/:title/"
 
 [params]
   author = "Daniel Rodriguez"
   description = "- entre -"
+
+[taxonomies]
+  tag = "tags"
 
 [menu]
   [[menu.main]]

@@ -1,22 +1,15 @@
-<header>
-    <div class="navbar">
-        <nav class="container">
-            <ul class="right-nav navbar-nav bd-navbar-nav flex-row" role="menu">
-                {{ range $.Site.Menus.main }}
-                <li class="nav-item" role="menuitem">
-                    <a href="{{ .URL }}">{{- .Name -}}</a>
-                </li>
-                {{ end }}
-            </ul>
-            <div class="navbar-nav ml-md-auto">
-                <ul class="left-nav navbar-nav bd-navbar-nav flex-row" role="menu">
-                    {{ range $.Site.Menus.second }}
-                    <li class="nav-item" role="menuitem">
-                        <a href="{{ .URL }}">{{- .Name -}}</a>
-                    </li>
-                    {{ end }}
-                </ul>
-            </div>
-        </nav>
-    </div>
+
+<header class="site-header">
+    <nav class="navbar flex-column flex-md-row">
+        <a class="navbar-brand" href="/">{{ .Site.Title }}</a>
+
+        <ul class="nav navbar-right">
+            {{ range $.Site.Menus.second }}
+            <li class="nav-item" role="menuitem">
+                <a href="{{ .URL }}">{{- .Name -}}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
 </header>
+

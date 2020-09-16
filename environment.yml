@@ -1,0 +1,11 @@
+name: extrapolaciones.com
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - black
+  - pylint
+  - ipykernel
+  - pip
+  - pip:
+      - notion

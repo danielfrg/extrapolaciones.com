@@ -1,22 +1,14 @@
 {{ define "body" }}
-{{- partial "header.html" . -}}
+<div class="content container">
 
-<div class="jumbotron">
-    <div class="container">
-      <h1>{{ .Site.Title }}</h1>
-      <h2>{{ $.Site.Params.description }}</h2>
-    </div>
+    {{- partial "header.html" . -}}
+
+    <main class="post-feed">
+        {{ range $index, $element := .Site.RegularPages }}
+        {{- partial "post-card.html" (dict "context" . "index" $index "home" $.IsHome) -}}
+        {{ end }}
+    </main>
 </div>
-
-<main>
-    <div class="posts container">
-        <div class="post-feed">
-            {{ range $index, $element := .Site.RegularPages }}
-                {{- partial "post-card.html" (dict "context" . "index" $index "home" $.IsHome) -}}
-            {{ end }}
-        </div>
-    </div>
-</main>
 
 {{- partial "footer.html" $ -}}
 
