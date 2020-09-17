@@ -38,81 +38,86 @@ def get_notion_img_link(block):
 
 def blocks2md(blocks, indent=0):
     md = ""
-    img_count = 0
     numbered_list_index = 0
 
     for block in blocks:
         try:
-            btype = block.type
+            block_type = block.type
         except:
+            print(0)
             continue
+        print(block, block_type)
 
-        if btype != "numbered_list":
-            numbered_list_index = 0
         try:
-            bt = block.title
+            block_title = block.title
         except:
             pass
 
+        if block_type != "numbered_list":
+            numbered_list_index = 0
+
         new_content = ""
-        if btype == "header":
-            new_content = "# " + bt
-        elif btype == "sub_header":
-            new_content = "## " + bt
-        elif btype == "sub_sub_header":
-            new_content = "### " + bt
-        elif btype == "page":
+        if block_type == "header":
+            new_content = "# " + block_title
+        elif block_type == "sub_header":
+            new_content = "## " + block_title
+        elif block_type == "sub_sub_header":
+            new_content = "### " + block_title
+        elif block_type == "page":
             try:
                 if "https:" in block.icon:
                     icon = "!" + link("", block.icon)
                 else:
                     icon = block.icon
-                new_content = "# " + icon + bt
+                new_content = "# " + icon + block_title
             except:
-                new_content = "# " + bt
-        elif btype == "text":
-            new_content = bt + "  "
-        elif btype == "bookmark":
-            new_content = link(bt, block.link)
+                new_content = "# " + block_title
+        elif block_type == "text":
+            if not block_title:
+                block_title = "<p></p>"
+            new_content = block_title
+            print(2, new_content)
+        elif block_type == "bookmark":
+            new_content = link(block_title, block.link)
         elif (
-            btype == "video"
-            or btype == "file"
-            or btype == "audio"
-            or btype == "pdf"
-            or btype == "gist"
+            block_type == "video"
+            or block_type == "file"
+            or block_type == "audio"
+            or block_type == "pdf"
+            or block_type == "gist"
         ):
             new_content = link(block.source, block.source)
-        elif btype == "bulleted_list" or btype == "toggle":
-            new_content = "- " + bt
+        elif block_type == "bulleted_list" or block_type == "toggle":
+            new_content = "- " + block_title
             if block.children:
                 new_content += "\n"
                 new_content += blocks2md(block.children, indent=indent + 2)
-        elif btype == "numbered_list":
+        elif block_type == "numbered_list":
             numbered_list_index += 1
-            new_content = str(numbered_list_index) + ". " + bt
+            new_content = str(numbered_list_index) + ". " + block_title
             if block.children:
                 new_content += "\n"
                 new_content += blocks2md(block.children, indent=indent + 2)
-        elif btype == "image":
+        elif block_type == "image":
             width = block.get()["format"]["block_width"]
             new_content = image("image", get_notion_img_link(block), width)
-        elif btype == "code":
+        elif block_type == "code":
             new_content = "```" + block.language + "\n" + block.title + "\n```"
-        elif btype == "equation":
+        elif block_type == "equation":
             new_content = "$$" + block.latex + "$$"
-        elif btype == "divider":
+        elif block_type == "divider":
             new_content = "---"
-        elif btype == "to_do":
+        elif block_type == "to_do":
             if block.checked:
-                new_content = "- [x] " + bt
+                new_content = "- [x] " + block_title
             else:
-                new_content = "- [ ]" + bt
-        elif btype == "quote":
-            new_content = "> " + bt
-        elif btype == "column" or btype == "column_list":
+                new_content = "- [ ]" + block_title
+        elif block_type == "quote":
+            new_content = "> " + block_title
+        elif block_type == "column" or block_type == "column_list":
             continue
         else:
-            print("Unkown type", btype)
+            print("Unkown type", block_type)
 
         md += textwrap.indent(new_content, " " * indent)
         md += "\n\n"
@@ -122,11 +127,11 @@ def blocks2md(blocks, indent=0):
 def featured_image(blocks):
     for block in blocks:
         try:
-            btype = block.type
+            block_type = block.type
         except:
             continue
 
-        if btype == "image":
+        if block_type == "image":
             return get_notion_img_link(block)
     return ""
 
@@ -161,7 +166,7 @@ if __name__ == "__main__":
     this_dir = os.path.dirname(os.path.realpath(__file__))
     generated_dir = os.path.join(this_dir, "..", "content", "articles", "generated")
 
-    for row in articles.collection.get_rows():
+    for row in articles.collection.get_rows()[:1]:
         title = row.name
         published = row.published
         date_dir = str(row.publish_date.start.year) if row.publish_date else "drafts"
