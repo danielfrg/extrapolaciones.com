@@ -35,3 +35,6 @@ summaryLength = 25
     name = "Twitter"
     url = "https://twitter.com/danielfrg"
     weight = 10
+
+[markup.goldmark.renderer]
+unsafe= true

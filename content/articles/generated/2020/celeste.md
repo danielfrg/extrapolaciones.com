@@ -4,9 +4,10 @@ date: 2020-08-31
 feature_image: https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffadcc85f-8a84-4ee9-a65d-327542e80fa4%2Fcover.jpg?table=block&id=426589f8-dc09-452f-91c2-9a13ef2f40d8&userId=&cache=v2
 summary: A veces lo mejor es dejarse llevar
 tags: ['Juegos', 'Another']
+draft: False
 ---
 
-![image](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffadcc85f-8a84-4ee9-a65d-327542e80fa4%2Fcover.jpg?table=block&id=426589f8-dc09-452f-91c2-9a13ef2f40d8&userId=&cache=v2)
+<img alt="image" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffadcc85f-8a84-4ee9-a65d-327542e80fa4%2Fcover.jpg?table=block&id=426589f8-dc09-452f-91c2-9a13ef2f40d8&userId=&cache=v2" style="width: 1280px" />
 
 Buena parte de mi vida me he considerado un "gamer", los juegos formaban parte de mi personalidad, jugaba, leía y veía videos acerca de ellos, religiosamente seguía E3, Tokyo Game Show y mas eventos, era fiel seguidor de Atomix.vg y otros medios. Eso fue hasta hace unos años cuando dejé de jugar tanto aunque no lo abandone completamente, he jugado RDR2, Zelda BOTW y otros juegos triple-A.  
 

@@ -1,4 +1,6 @@
 import os
+import textwrap
+from datetime import datetime
 from urllib.parse import quote_plus
 
 from notion.client import NotionClient
@@ -18,22 +20,26 @@ def link(name, url):
     return "[" + name + "]" + "(" + url + ")"
 
 
+def image(name, url, width=None):
+    width = f'style="width: {width}px"' if width else ""
+    return f'<img alt="{name}" src="{url}" {width} />'
+
+
 def get_notion_img_link(block):
+    image = block.get()
+    block_id = image["id"]
+    url_quote = quote_plus(image["format"]["display_source"])
+
     notion_img_template = (
         "https://www.notion.so/image/{url}?table=block&id={id}&userId=&cache=v2"
     )
-    image = block.get()
-    url_quote = quote_plus(image["format"]["display_source"])
-    block_id = image["id"]
     return notion_img_template.format(url=url_quote, id=block_id)
 
 
-def block2md(blocks):
+def blocks2md(blocks, indent=0):
     md = ""
     img_count = 0
     numbered_list_index = 0
-    # title = blocks[0].title
-    # title = title.replace(" ", "")
 
     for block in blocks:
         try:
@@ -47,25 +53,27 @@ def block2md(blocks):
             bt = block.title
         except:
             pass
+
+        new_content = ""
         if btype == "header":
-            md += "# " + bt
+            new_content = "# " + bt
         elif btype == "sub_header":
-            md += "## " + bt
+            new_content = "## " + bt
         elif btype == "sub_sub_header":
-            md += "### " + bt
+            new_content = "### " + bt
         elif btype == "page":
             try:
                 if "https:" in block.icon:
                     icon = "!" + link("", block.icon)
                 else:
                     icon = block.icon
-                md += "# " + icon + bt
+                new_content = "# " + icon + bt
             except:
-                md += "# " + bt
+                new_content = "# " + bt
         elif btype == "text":
-            md += bt + "  "
+            new_content = bt + "  "
         elif btype == "bookmark":
-            md += link(bt, block.link)
+            new_content = link(bt, block.link)
         elif (
             btype == "video"
             or btype == "file"
@@ -73,31 +81,40 @@ def block2md(blocks):
             or btype == "pdf"
             or btype == "gist"
         ):
-            md += link(block.source, block.source)
+            new_content = link(block.source, block.source)
         elif btype == "bulleted_list" or btype == "toggle":
-            md += "- " + bt
+            new_content = "- " + bt
+            if block.children:
+                new_content += "\n"
+                new_content += blocks2md(block.children, indent=indent + 2)
         elif btype == "numbered_list":
             numbered_list_index += 1
-            md += str(numbered_list_index) + ". " + bt
+            new_content = str(numbered_list_index) + ". " + bt
+            if block.children:
+                new_content += "\n"
+                new_content += blocks2md(block.children, indent=indent + 2)
         elif btype == "image":
-            md += "!" + link("image", get_notion_img_link(block))
+            width = block.get()["format"]["block_width"]
+            new_content = image("image", get_notion_img_link(block), width)
         elif btype == "code":
-            md += "```" + block.language + "\n" + block.title + "\n```"
+            new_content = "```" + block.language + "\n" + block.title + "\n```"
         elif btype == "equation":
-            md += "$$" + block.latex + "$$"
+            new_content = "$$" + block.latex + "$$"
         elif btype == "divider":
-            md += "---"
+            new_content = "---"
         elif btype == "to_do":
             if block.checked:
-                md += "- [x] " + bt
+                new_content = "- [x] " + bt
             else:
-                md += "- [ ]" + bt
+                new_content = "- [ ]" + bt
         elif btype == "quote":
-            md += "> " + bt
+            new_content = "> " + bt
         elif btype == "column" or btype == "column_list":
             continue
         else:
-            pass
+            print("Unkown type", btype)
+
+        md += textwrap.indent(new_content, " " * indent)
         md += "\n\n"
     return md
 
@@ -116,15 +133,18 @@ def featured_image(blocks):
 
 def get_md(item):
     title = item.name
-    date = item.publish_date.start
-    date_str = date.strftime("%Y-%m-%d")
+
     page_url = item.get_browseable_url()
     page = client.get_block(page_url)
-    body = block2md(page.children)
+    body = blocks2md(page.children)
 
     feature_image = featured_image(page.children)
     tags = item.tags
     summary = item.summary
+    published = row.published
+    date = row.publish_date.start if row.publish_date else datetime(2100, 1, 1)
+    date_str = date.strftime("%Y-%m-%d")
+    draft = not published
 
     return templates.article.format(
         title=title,
@@ -133,6 +153,7 @@ def get_md(item):
         summary=summary,
         tags=tags,
         body=body,
+        draft=draft,
     ).strip()
 
 
@@ -141,12 +162,14 @@ if __name__ == "__main__":
     generated_dir = os.path.join(this_dir, "..", "content", "articles", "generated")
 
     for row in articles.collection.get_rows():
-        date = row.publish_date.start
+        title = row.name
+        published = row.published
+        date_dir = str(row.publish_date.start.year) if row.publish_date else "drafts"
 
-        output_dir = os.path.join(generated_dir, str(date.year))
+        output_dir = os.path.join(generated_dir, date_dir)
         os.makedirs(output_dir, exist_ok=True)
 
-        fname = row.name.lower().replace(" ", "-") + ".md"
+        fname = title.lower().replace(" ", "-") + ".md"
         output_file = os.path.join(output_dir, fname)
         md_content = get_md(row)
 

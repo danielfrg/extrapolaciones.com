@@ -1,4 +1,4 @@
-name: extrapolaciones.com
+name: extrapolaciones
 channels:
   - conda-forge
 dependencies:

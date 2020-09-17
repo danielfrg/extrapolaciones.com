@@ -1,6 +1,6 @@
 ---
 title: "Markdown demo"
-date: 2100-08-30T23:59:00-04:00
+date: 2100-01-01T00:00:00-04:00
 feature_image: https://demo.ghost.io/content/images/size/w1000/2019/10/welcome-to-ghost.png
 summary: All markdown styles demo
 ---

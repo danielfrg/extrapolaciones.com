@@ -16,7 +16,6 @@ first: help
 # ------------------------------------------------------------------------------
 # Hugo
 
-
 .PHONY: build
 build: npm-build hugo  ## Build site
 
@@ -26,15 +25,14 @@ hugo: ## Run hugo build
 	hugo
 
 
-.PHONY: notebooks
-notebooks:  ## Convert notebooks
-	python nbconvert/convert.py
+.PHONY: articles
+articles:  ## Make articles from Notion
+	python python/articles.py
 
 
 .PHONY: serve
 serve:  ## Serve website
 	hugo serve -F -D
-
 
 # ------------------------------------------------------------------------------
 # JS
@@ -50,14 +48,13 @@ npm-install:  ## Install JS dependencies
 npm-dev:  ## Build JS with watch
 	cd $(CURDIR)/js/; npm run dev
 
-
 # ------------------------------------------------------------------------------
 # Other
 
-
 .PHONY: clean
 clean:  ## Clean build files
-	@rm -rf public
+	rm -rf public
+	rm -rf content/articles/generated
 
 
 .PHONY: help
