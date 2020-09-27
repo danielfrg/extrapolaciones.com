@@ -17,6 +17,6 @@ draft: True
 
 - Asumir el carácter paradójico de las cosas 
 
-<p><p></p></p>
+<p></p>
 
 <p>Como tomar decisiones? Para tomar decisiones lo llevamos al límite</p>

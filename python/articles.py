@@ -61,7 +61,7 @@ def blocks2md(blocks, indent=0):
         except AttributeError:
             pass
 
-        print(block)
+        # print(block)
 
         attrs = f' class="{color}"' if color else ""
         new_content = ""
@@ -171,8 +171,8 @@ if __name__ == "__main__":
     this_dir = os.path.dirname(os.path.realpath(__file__))
     generated_dir = os.path.join(this_dir, "..", "content", "articles", "generated")
 
-    # for row in articles.collection.get_rows()[:]:
-    for row in articles.collection.get_rows()[3:4]:
+    for row in articles.collection.get_rows()[:]:
+        # for row in articles.collection.get_rows()[3:4]:
         title = row.name
         print(title)
         published = row.published
