@@ -63,7 +63,7 @@ def blocks2md(blocks, indent=0):
 
         print(block)
 
-        attrs = f'class="{color}"' if color else ""
+        attrs = f' class="{color}"' if color else ""
         new_content = ""
         if block_type == "header":
             new_content = f"<h1{attrs}>{block_title}</h1>"
