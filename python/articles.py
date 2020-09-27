@@ -57,22 +57,22 @@ def blocks2md(blocks, indent=0):
 
         color = ""
         try:
-            color = block.color
+            color = color if block.color is None else block.color
         except AttributeError:
             pass
 
-        classes = f"{color}"
+        print(block)
+
+        attrs = f'class="{color}"' if color else ""
         new_content = ""
         if block_type == "header":
-            new_content = f'<h1 class="{classes}">{block_title}</h1>'
+            new_content = f"<h1{attrs}>{block_title}</h1>"
         elif block_type == "sub_header":
-            new_content = f'<h2 class="{classes}">{block_title}</h2>'
+            new_content = f"<h2{attrs}>{block_title}</h2>"
         elif block_type == "sub_sub_header":
-            new_content = f'<h3 class="{classes}">{block_title}</h3>'
+            new_content = f"<h3{attrs}>{block_title}</h3>"
         elif block_type == "text":
-            if not block_title:
-                block_title = "<p></p>"
-            new_content = f'<p class="{classes}">{block_title}</p>'
+            new_content = f"<p{attrs}>{block_title}</p>"
         elif block_type == "bulleted_list" or block_type == "toggle":
             new_content = "- " + block_title
             if block.children:
@@ -171,8 +171,8 @@ if __name__ == "__main__":
     this_dir = os.path.dirname(os.path.realpath(__file__))
     generated_dir = os.path.join(this_dir, "..", "content", "articles", "generated")
 
-    for row in articles.collection.get_rows()[:]:
-        # for row in articles.collection.get_rows()[2:3]:
+    # for row in articles.collection.get_rows()[:]:
+    for row in articles.collection.get_rows()[3:4]:
         title = row.name
         print(title)
         published = row.published
