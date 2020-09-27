@@ -181,10 +181,24 @@ main.post {
         font-weight: 600;
     }
 
-    p,
+    p {
+        font-size: 1.2rem;
+        min-height: 28px;
+        margin-bottom: 1rem;
+    }
+
     li {
         font-size: 1.2rem;
         min-height: 28px;
+        margin-bottom: 1rem;
+
+        p {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin-top: 1rem;
+        }
     }
 
     table {
@@ -251,6 +265,16 @@ main.post {
         border-left: 0.25em solid #dfe2e5;
         padding-left: 1em;
         font-style: italic;
+    }
+
+    .yellow_background {
+        background-color: rgb(251, 243, 219);
+    }
+
+    h1.yellow_background,
+    h2.yellow_background,
+    h3.yellow_background {
+        padding: 10px;
     }
 }
 

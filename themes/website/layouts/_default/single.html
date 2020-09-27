@@ -18,7 +18,7 @@
 
                 <div class="byline">
                     {{ if .Param "author" }}
-                    By <span class="author">{{ .Param "author" }}</span> <span class="bull">&bull;</span>
+                    <span class="author">{{ .Param "author" }}</span> <span class="bull">&bull;</span>
                     {{ end }}
                     {{ with .Params.tags }}
                         {{ $primaryTag := (index . 0) }}

@@ -46,7 +46,6 @@ def blocks2md(blocks, indent=0):
         except:
             print(0)
             continue
-        print(block, block_type)
 
         try:
             block_title = block.title
@@ -56,37 +55,24 @@ def blocks2md(blocks, indent=0):
         if block_type != "numbered_list":
             numbered_list_index = 0
 
+        color = ""
+        try:
+            color = block.color
+        except AttributeError:
+            pass
+
+        classes = f"{color}"
         new_content = ""
         if block_type == "header":
-            new_content = "# " + block_title
+            new_content = f'<h1 class="{classes}">{block_title}</h1>'
         elif block_type == "sub_header":
-            new_content = "## " + block_title
+            new_content = f'<h2 class="{classes}">{block_title}</h2>'
         elif block_type == "sub_sub_header":
-            new_content = "### " + block_title
-        elif block_type == "page":
-            try:
-                if "https:" in block.icon:
-                    icon = "!" + link("", block.icon)
-                else:
-                    icon = block.icon
-                new_content = "# " + icon + block_title
-            except:
-                new_content = "# " + block_title
+            new_content = f'<h3 class="{classes}">{block_title}</h3>'
         elif block_type == "text":
             if not block_title:
                 block_title = "<p></p>"
-            new_content = block_title
-            print(2, new_content)
-        elif block_type == "bookmark":
-            new_content = link(block_title, block.link)
-        elif (
-            block_type == "video"
-            or block_type == "file"
-            or block_type == "audio"
-            or block_type == "pdf"
-            or block_type == "gist"
-        ):
-            new_content = link(block.source, block.source)
+            new_content = f'<p class="{classes}">{block_title}</p>'
         elif block_type == "bulleted_list" or block_type == "toggle":
             new_content = "- " + block_title
             if block.children:
@@ -101,8 +87,20 @@ def blocks2md(blocks, indent=0):
         elif block_type == "image":
             width = block.get()["format"]["block_width"]
             new_content = image("image", get_notion_img_link(block), width)
+        elif block_type == "quote":
+            new_content = "> " + block_title
         elif block_type == "code":
             new_content = "```" + block.language + "\n" + block.title + "\n```"
+        elif block_type == "bookmark":
+            new_content = link(block_title, block.link)
+        elif (
+            block_type == "video"
+            or block_type == "file"
+            or block_type == "audio"
+            or block_type == "pdf"
+            or block_type == "gist"
+        ):
+            new_content = link(block.source, block.source)
         elif block_type == "equation":
             new_content = "$$" + block.latex + "$$"
         elif block_type == "divider":
@@ -112,10 +110,17 @@ def blocks2md(blocks, indent=0):
                 new_content = "- [x] " + block_title
             else:
                 new_content = "- [ ]" + block_title
-        elif block_type == "quote":
-            new_content = "> " + block_title
         elif block_type == "column" or block_type == "column_list":
             continue
+        elif block_type == "page":
+            try:
+                if "https:" in block.icon:
+                    icon = "!" + link("", block.icon)
+                else:
+                    icon = block.icon
+                new_content = "# " + icon + block_title
+            except:
+                new_content = "# " + block_title
         else:
             print("Unkown type", block_type)
 
@@ -166,8 +171,10 @@ if __name__ == "__main__":
     this_dir = os.path.dirname(os.path.realpath(__file__))
     generated_dir = os.path.join(this_dir, "..", "content", "articles", "generated")
 
-    for row in articles.collection.get_rows()[:1]:
+    for row in articles.collection.get_rows()[:]:
+        # for row in articles.collection.get_rows()[2:3]:
         title = row.name
+        print(title)
         published = row.published
         date_dir = str(row.publish_date.start.year) if row.publish_date else "drafts"
 
