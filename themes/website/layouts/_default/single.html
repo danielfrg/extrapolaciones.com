@@ -1,14 +1,9 @@
 {{ define "body" }}
 
-<div class="content container">
-
-    {{- partial "header.html" . -}}
-
+{{- partial "header.html" . -}}
 
 <main class="post container">
-
-        <article class="{{ if not (.Param "feature_image") }} no-image {{ end }}">
-
+        <article>
             <header>
                 <h1>{{ .Title }}</h1>
 
@@ -37,11 +32,8 @@
             <section class="post-full-content">
                 {{ .Content }}
             </section>
-
         </article>
 </main>
-
-</div>
 
 {{- partial "footer.html" $ -}}
 

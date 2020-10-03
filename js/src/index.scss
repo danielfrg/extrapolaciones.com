@@ -1,5 +1,6 @@
-:root {
-    --blue: #3eb0ef;
+html {
+    width: 100%;
+    height: 100%;
 }
 
 body {
@@ -13,18 +14,34 @@ body {
     -moz-font-feature-settings: "liga" on;
 }
 
-.content.container {
-    max-width: 960px;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 header.site-header {
-    border-bottom: 1px #000 solid;
+    margin: 0 1em;
+    padding: 0 20px;
+    width: 100%;
+
+    @media (min-width: 576px) {
+        max-width: 960px;
+    }
 
     nav {
-        padding: 5px 0;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px #000 solid;
+
+        @media (min-width: 576px) {
+            padding-bottom: 0;
+        }
     }
 
     .navbar-brand {
+        margin: 0;
         letter-spacing: -1px;
     }
 
@@ -51,22 +68,52 @@ main.post-feed {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    margin: 20px auto;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px;
 
     .post-card {
         position: relative;
-        flex: 1 1 25%;
-        // max-width: 25%;
         display: flex;
+        flex: 1 1 100%;
         flex-direction: column;
-        padding: 0 5px 20px;
+        padding: 10px 5px;
+
+        @media (min-width: 576px) {
+            flex: 1 1 50%;
+            max-width: 50%;
+        }
+
+        @media (min-width: 1024px) {
+            flex: 1 1 25%;
+            width: 25%;
+        }
+
+        .post-card-link-wrapper {
+            display: flex;
+            flex-direction: row;
+
+            @media (min-width: 1024px) {
+                flex-direction: column;
+            }
+        }
 
         .post-card-image {
-            width: 100%;
-            height: 200px;
-            background: var(--lightgrey) no-repeat center center;
+            width: 33%;
+            height: 110px;
+            background: #fff no-repeat center center;
             object-fit: cover;
-            margin-bottom: 10px;
+            margin-right: 10px;
+
+            @media (min-width: 576px) {
+                width: 40%;
+                height: 144px;
+            }
+
+            @media (min-width: 1024px) {
+                width: 100%;
+                margin-bottom: 10px;
+            }
         }
 
         h2 {
@@ -89,23 +136,41 @@ main.post-feed {
         p {
             color: #404040;
             font-size: 0.85em;
+
+            @media (min-width: 576px) {
+                font-size: 0.9em;
+            }
+
+            @media (min-width: 1024px) {
+                font-size: 1em;
+            }
         }
     }
 
     .post-card-large {
         flex: 1 1 100%;
         max-width: 100%;
+        padding-top: 0;
 
-        .post-card-content-link {
+        .post-card-link-wrapper {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+
+            @media (min-width: 576px) {
+                flex-direction: row;
+            }
         }
 
         .post-card-image {
-            width: 50%;
-            height: 400px;
-            margin-right: 25px;
-            margin-bottom: 0px;
+            width: 100%;
+            height: 200px;
+            margin: 0px;
+
+            @media (min-width: 576px) {
+                width: 50%;
+                height: 400px;
+                margin-right: 25px;
+            }
         }
 
         .post-card-content {
@@ -121,6 +186,10 @@ main.post-feed {
 
         p {
             font-size: 1em;
+
+            @media (min-width: 576px) {
+                font-size: 1.2em;
+            }
         }
     }
 }
@@ -128,7 +197,8 @@ main.post-feed {
 main.post {
     max-width: 700px;
     font-family: "Source Serif Pro", serif;
-    margin: 20px auto;
+    margin: 0 auto;
+    padding: 15px 20px;
 
     header {
         margin-bottom: 20px;
@@ -148,11 +218,11 @@ main.post {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                 Helvetica, Arial, sans-serif, "Apple Color Emoji",
                 "Segoe UI Emoji", "Segoe UI Symbol";
-            font-size: 0.8em;
-            text-align: right;
+            font-size: 0.85em;
+            color: #757575;
 
             .author {
-                font-weight: 600;
+                color: #000;
             }
 
             .date {
@@ -279,22 +349,38 @@ main.post {
 }
 
 footer.site-footer {
+    // position: absolute;
+    // bottom: 0;
+    // width: 100%;
     background: #000;
-    font-size: 0.8em;
+    font-size: 0.85em;
     color: #cccccc;
-    padding: 30px 0 30px;
-    margin-top: 100px;
+    padding: 10px 0 20px;
 
     .container {
-        max-width: 1024px;
+        max-width: 960px;
+    }
+
+    .col-md-6 {
+        margin-top: 1em;
+
+        // @media (min-width: 1024px) {
+        //     margin-top: 0;
+        // }
     }
 
     a {
-        color: #cccccc;
+        color: #fff;
 
         &:hover {
             opacity: 0.6;
             text-decoration: none;
+        }
+    }
+
+    .copyright {
+        @media (min-width: 576px) {
+            text-align: right;
         }
     }
 }

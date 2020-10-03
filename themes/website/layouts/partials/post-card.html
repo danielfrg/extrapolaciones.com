@@ -8,7 +8,7 @@
 
 <article class="post-card{{ $css_classes }}">
 
-    <a class="post-card-content-link" href="{{ .context.Permalink }}">
+    <a class="post-card-link-wrapper" href="{{ .context.Permalink }}">
         {{ if .context.Param "feature_image" }}
         <img class="post-card-image"src="{{ .context.Param "feature_image" }}" alt="{{ .context.Title }}"/>
         {{ end }}

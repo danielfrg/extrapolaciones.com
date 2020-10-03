@@ -1,15 +1,15 @@
 {{ define "body" }}
-<div class="content container">
 
     {{- partial "header.html" . -}}
 
-    <main class="post-feed">
+    <main class="container post-feed">
         {{ range $index, $element := .Site.RegularPages }}
         {{- partial "post-card.html" (dict "context" . "index" $index "home" $.IsHome) -}}
         {{ end }}
     </main>
+
+    {{- partial "footer.html" $ -}}
 </div>
 
-{{- partial "footer.html" $ -}}
 
 {{ end }}
