@@ -1,19 +1,13 @@
 import os
+import re
 import textwrap
 from datetime import datetime
-from urllib.parse import quote_plus
+from urllib.parse import urlparse, quote_plus, parse_qs
 
+import mistune
 from notion.client import NotionClient
 
 import templates
-
-
-# Obtain the `token_v2` value by inspecting your browser cookies on a logged-in session on Notion.so
-client = NotionClient(token_v2=os.environ.get("NOTION_TOKEN", ""))
-
-articles = client.get_collection_view(
-    "https://www.notion.so/danielfrg/1b48075329514ab785d68467ccbea7e9?v=3f8f32f695a549f085600d31f3680462"
-)
 
 
 def link(name, url):
@@ -36,21 +30,37 @@ def get_notion_img_link(block):
     return notion_img_template.format(url=url_quote, id=block_id)
 
 
+def get_video_embed(source):
+    url = urlparse(source)
+    if url.netloc == "www.youtube.com":
+        params = parse_qs(url.query)
+        id_ = params["v"][0]
+        return f'{{{{< youtube id="{id_}" autoplay="false" >}}}}'
+    return ""
+
+
 def blocks2md(blocks, indent=0):
-    md = ""
+    output_md = ""
+
+    content = ""
     numbered_list_index = 0
 
-    for block in blocks:
+    for i, block in enumerate(blocks):
         try:
             block_type = block.type
         except:
-            print(0)
             continue
 
         try:
             block_title = block.title
         except:
-            pass
+            block_title = False
+
+        if block_title:
+            content = mistune.html(block_title) if block_title else ""
+            content = content.strip()
+            content = re.sub(r"^<p>", "", content)
+            content = re.sub(r"</p>$", "", content)
 
         if block_type != "numbered_list":
             numbered_list_index = 0
@@ -61,72 +71,88 @@ def blocks2md(blocks, indent=0):
         except AttributeError:
             pass
 
-        # print(block)
+        list_ = ""
+        if block_type == "bulleted_list" or block_type == "numbered_list":
+            list_ = " list"
 
-        attrs = f' class="{color}"' if color else ""
+        attrs = f' class="{color}{list_}"' if color or list_ else ""
+
         new_content = ""
+
         if block_type == "header":
-            new_content = f"<h1{attrs}>{block_title}</h1>"
+            new_content = f"<h1{attrs}>{content}</h1>"
         elif block_type == "sub_header":
-            new_content = f"<h2{attrs}>{block_title}</h2>"
+            new_content = f"<h2{attrs}>{content}</h2>"
         elif block_type == "sub_sub_header":
-            new_content = f"<h3{attrs}>{block_title}</h3>"
+            new_content = f"<h3{attrs}>{content}</h3>"
         elif block_type == "text":
-            new_content = f"<p{attrs}>{block_title}</p>"
+            new_content = f"<p{attrs}>{content}</p>"
         elif block_type == "bulleted_list" or block_type == "toggle":
-            new_content = "- " + block_title
+            disc = '<div class="li_before"><div class="ul_disc">&bull;</div></div>'
+            content = f"<p>{content}</p>"
             if block.children:
-                new_content += "\n"
-                new_content += blocks2md(block.children, indent=indent + 2)
+                content += "\n"
+                content += blocks2md(block.children)
+            content = f'<div class="li_content">{content}</div>'
+            new_content = f"<div{attrs}>{disc}{content}</div>"
         elif block_type == "numbered_list":
             numbered_list_index += 1
-            new_content = str(numbered_list_index) + ". " + block_title
+            disc = f'<div class="li_before"><div class="ol_disc">{numbered_list_index}.</div></div>'
+            content = f"<p>{content}</p>"
             if block.children:
-                new_content += "\n"
-                new_content += blocks2md(block.children, indent=indent + 2)
+                content += "\n"
+                content += blocks2md(block.children)
+            content = f'<div class="li_content">{content}</div>'
+            new_content = f"<div{attrs}>{disc}{content}</div>"
+        elif block_type == "to_do":
+            if block.checked:
+                checkbox = '<input type="checkbox" disabled checked>'
+                new_content = f"<p>{checkbox}{content}</p>"
+            else:
+                checkbox = '<input type="checkbox" disabled>'
+                new_content = f"<p>{checkbox}{content}</p>"
         elif block_type == "image":
             width = block.get()["format"]["block_width"]
             new_content = image("image", get_notion_img_link(block), width)
         elif block_type == "quote":
-            new_content = "> " + block_title
+            content = ""
+            for line in block_title.split("\n"):
+                content += mistune.html(line)
+            new_content = f"<blockquote{attrs}>" + content + "</blockquote>"
         elif block_type == "code":
+            # You cannot color code blocks in notion
             new_content = "```" + block.language + "\n" + block.title + "\n```"
-        elif block_type == "bookmark":
-            new_content = link(block_title, block.link)
-        elif (
-            block_type == "video"
-            or block_type == "file"
-            or block_type == "audio"
-            or block_type == "pdf"
-            or block_type == "gist"
-        ):
-            new_content = link(block.source, block.source)
-        elif block_type == "equation":
-            new_content = "$$" + block.latex + "$$"
+        elif block_type == "video":
+            # or block_type == "file"
+            # or block_type == "audio"
+            # or block_type == "pdf"
+            # or block_type == "gist"
+            new_content = get_video_embed(block.source)
         elif block_type == "divider":
-            new_content = "---"
-        elif block_type == "to_do":
-            if block.checked:
-                new_content = "- [x] " + block_title
-            else:
-                new_content = "- [ ]" + block_title
-        elif block_type == "column" or block_type == "column_list":
-            continue
-        elif block_type == "page":
-            try:
-                if "https:" in block.icon:
-                    icon = "!" + link("", block.icon)
-                else:
-                    icon = block.icon
-                new_content = "# " + icon + block_title
-            except:
-                new_content = "# " + block_title
+            new_content = f"<hr{attrs}>"
+        # elif block_type == "bookmark":
+        #     new_content = link(content, block.link)
+        # elif block_type == "equation":
+        #     new_content = "$$" + block.latex + "$$"
+        # elif block_type == "column" or block_type == "column_list":
+        #     continue
+        # elif block_type == "page":
+        #     try:
+        #         if "https:" in block.icon:
+        #             icon = "!" + link("", block.icon)
+        #         else:
+        #             icon = block.icon
+        #         new_content = "# " + icon + content
+        #     except:
+        #         new_content = "# " + content
         else:
             print("Unkown type", block_type)
 
-        md += textwrap.indent(new_content, " " * indent)
-        md += "\n\n"
-    return md
+        output_md += new_content
+        output_md += "\n\n"
+        content = ""
+
+    return output_md
 
 
 def featured_image(blocks):
@@ -168,10 +194,23 @@ def get_md(item):
 
 
 if __name__ == "__main__":
+    # Obtain the `token_v2` value by inspecting your browser cookies on a logged-in session on Notion.so
+    client = NotionClient(token_v2=os.environ.get("NOTION_TOKEN", ""))
+
+    articles = client.get_collection_view(
+        "https://www.notion.so/danielfrg/1b48075329514ab785d68467ccbea7e9?v=3f8f32f695a549f085600d31f3680462"
+    )
+    articles = articles.collection.get_rows()
+
     this_dir = os.path.dirname(os.path.realpath(__file__))
     generated_dir = os.path.join(this_dir, "..", "content", "articles", "generated")
 
-    for row in articles.collection.get_rows()[:]:
+    i = None
+    # i = len(articles) - 1
+
+    subset = articles[i : i + 1] if i is not None else articles
+
+    for row in subset:
         # for row in articles.collection.get_rows()[3:4]:
         title = row.name
         print(title)

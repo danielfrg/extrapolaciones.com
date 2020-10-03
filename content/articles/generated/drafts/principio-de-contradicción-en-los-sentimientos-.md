@@ -9,13 +9,13 @@ draft: True
 
 <p>Heidegger y Derrida: Es mucho más tranquilo para nosotros pensar en binario, me gusta o no me gusta. Es más difícil si es en grises, lo que usualmente es. Son zonas de ambigüedad que hacen que nos contraigamos con nosotros mismos.</p>
 
-- Metafísicamente hemos tomado por lo binario (Derrida hora y 5 mins más o menos)
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Metafísicamente hemos tomado por lo binario (Derrida hora y 5 mins más o menos)</p></div></div>
 
-- El pensamiento binario hace ver que uno es bueno y otro es malo
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>El pensamiento binario hace ver que uno es bueno y otro es malo</p></div></div>
 
-- Esto es muy de occidente
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Esto es muy de occidente</p></div></div>
 
-- Asumir el carácter paradójico de las cosas 
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Asumir el carácter paradójico de las cosas</p></div></div>
 
 <p></p>
 

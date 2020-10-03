@@ -13,50 +13,51 @@ draft: False
 
 <p>La respuesta es que la evolución no se ha equivocado, seria imposible pensar esto cuando vemos que absolutamente todos los animales duermen, los beneficios de dormir son mucho mayores que cualquier daño o deterioro que nos pueda causar, dormir influye en nuestra: creatividad, resolución de problemas, toma de decisiones, capacidad de aprender, memoria, problemas de corazón, salud mental, problemas emocionales, sistema inmune e incluso alarga nuestras vidas.</p>
 
-<p>También los diferentes tipos de sueño que tenemos los humanos, no-REM y REM, y los diferentes ciclos por los que pasamos en una noche normal fueron diseñados por la evolución dado que cada uno  cumple con diferentes beneficios. El libro incluso llega a proponer que dormir es una de las razones por las cuales el homo sapiens domino el mundo, esto muy de la mano de la hipótesis central de [Sapiens](https://en.wikipedia.org/wiki/Sapiens:_A_Brief_History_of_Humankind).</p>
+<p>También los diferentes tipos de sueño que tenemos los humanos, no-REM y REM, y los diferentes ciclos por los que pasamos en una noche normal fueron diseñados por la evolución dado que cada uno  cumple con diferentes beneficios. El libro incluso llega a proponer que dormir es una de las razones por las cuales el homo sapiens domino el mundo, esto muy de la mano de la hipótesis central de <a href="https://en.wikipedia.org/wiki/Sapiens:_A_Brief_History_of_Humankind">Sapiens</a>.</p>
 
-> A partir de estos datos, propongo una teoría: pasar de dormir en los árboles a hacerlo en el suelo fue el factor que catapultó al Homo sapiens a la cima de la pirámide de la evolución. Al menos dos características diferencian a los humanos del resto de primates, y creo que ambas fueron moldeadas de forma causal y beneficiosa por la mano del sueño, en concreto, por nuestro alto nivel de sueño REM en comparación con los demás mamíferos: (1) nuestro grado de complejidad sociocultural y (2) nuestra inteligencia cognitiva. El sueño REM, con el acto de soñar, nutre estos dos rasgos humanos. [...] Gracias a esta capacidad, el sueño REM podría muy bien haber acelerado el control racional de nuestras emociones primitivas iniciales. Según mi propuesta, este cambio contribuyó de manera esencial a la rápida conquista por parte del Homo sapiens del dominio sobre todas las demás especies.
+<blockquote><p>A partir de estos datos, propongo una teoría: pasar de dormir en los árboles a hacerlo en el suelo fue el factor que catapultó al Homo sapiens a la cima de la pirámide de la evolución. Al menos dos características diferencian a los humanos del resto de primates, y creo que ambas fueron moldeadas de forma causal y beneficiosa por la mano del sueño, en concreto, por nuestro alto nivel de sueño REM en comparación con los demás mamíferos: (1) nuestro grado de complejidad sociocultural y (2) nuestra inteligencia cognitiva. El sueño REM, con el acto de soñar, nutre estos dos rasgos humanos. [...] Gracias a esta capacidad, el sueño REM podría muy bien haber acelerado el control racional de nuestras emociones primitivas iniciales. Según mi propuesta, este cambio contribuyó de manera esencial a la rápida conquista por parte del Homo sapiens del dominio sobre todas las demás especies.</p>
+</blockquote>
 
 <p>Una utilidad de dormir (y mas precisamente en este caso de soñar) que personalmente me pareció sorprendente es que nos ayuda a separar los hechos de las emociones. Esto es algo por lo que todos hemos pasado: después de ciertos hechos en los que han pasado tanto como buenas como malas, simplemente dejas de recordar las malas experiencias y cuando las recuerdas ya no tienes sentimientos malos hacia ellas. Bueno, esto no es casual, y el sueño cumple una función importante en esto. No solo el tiempo lo cura todo, dormir es importante.</p>
 
 <p>Otras cuestiones importantes que trata el libro:</p>
 
-- Las dos causas por las que dormimos: el ritmo circadiano y la acumulación de adenina. Son independientes pero necesitamos de las dos
-  - La melatonina solo ayuda a controlar el ritmo circadiano
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Las dos causas por las que dormimos: el ritmo circadiano y la acumulación de adenina. Son independientes pero necesitamos de las dos</p>
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>La melatonina solo ayuda a controlar el ritmo circadiano</p></div></div>
 
-  - La cafeína solo afecta a la adenina. Genialmente [explicado por la Hiperactina](https://www.youtube.com/watch?v=umdlXN1-agM)
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>La cafeína solo afecta a la adenina. Genialmente <a href="https://www.youtube.com/watch?v=umdlXN1-agM">explicado por la Hiperactina</a></p></div></div>
 
+</div></div>
 
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Es normal y fue también diseñado evolutivamente que algunas personas sean diurnas mientras que otras nocturnas, esto viene en los genes de cada uno</p></div></div>
 
-- Es normal y fue también diseñado evolutivamente que algunas personas sean diurnas mientras que otras nocturnas, esto viene en los genes de cada uno
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Los humanos somos bifásicos, ósea que todo bien con la siesta</p></div></div>
 
-- Los humanos somos bifásicos, ósea que todo bien con la siesta
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>El sueño si cambia en etapas diferentes de la vida: niños, adolescentes y adultos, pero es mentira que los viejos necesiten menos tiempo de dormir</p></div></div>
 
-- El sueño si cambia en etapas diferentes de la vida: niños, adolescentes y adultos, pero es mentira que los viejos necesiten menos tiempo de dormir
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Debemos adaptar los sistemas educativos para que vayan al ritmo de los niños y adolescentes</p></div></div>
 
-- Debemos adaptar los sistemas educativos para que vayan al ritmo de los niños y adolescentes
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Conducir con falta de sueño es tan peligroso como conducir ebrio</p></div></div>
 
-- Conducir con falta de sueño es tan peligroso como conducir ebrio
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>El alcohol no nos da sueño, es un sedante y es muy diferente dormir que estar sedado</p></div></div>
 
-- El alcohol no nos da sueño, es un sedante y es muy diferente dormir que estar sedado
-
-- Lo mismo que la mayoría de pastillas para dormir
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Lo mismo que la mayoría de pastillas para dormir</p></div></div>
 
 <p></p>
 
 <p>Finalmente algunos de los consejos que da el libro que he empezado a seguir:</p>
 
-- Seguir un horario fijo para dormir - Aun lo intento y es el mas importante! 😅
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Seguir un horario fijo para dormir - Aun lo intento y es el mas importante! 😅</p></div></div>
 
-- No hacer ejercicio a ultima hora - Esto fue un cambio grande dado que iba al gym por las tardes/noches
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>No hacer ejercicio a ultima hora - Esto fue un cambio grande dado que iba al gym por las tardes/noches</p></div></div>
 
-- No cafeína - Ya tomaba poca pero ahora estoy en casi cero
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>No cafeína - Ya tomaba poca pero ahora estoy en casi cero</p></div></div>
 
-- No dispositivos electrónicos en la habitación, 
-  - Usar los modos nocturnos y que adaptan los colores a la hora del día
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>No dispositivos electrónicos en la habitación,</p>
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Usar los modos nocturnos y que adaptan los colores a la hora del día</p></div></div>
 
-  - Mínimas luces LED por las noches
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Mínimas luces LED por las noches</p></div></div>
 
+</div></div>
 
-
-- No quedarse en la cama despierto, es mejor pararse después de 20 minutos sin poder dormir
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>No quedarse en la cama despierto, es mejor pararse después de 20 minutos sin poder dormir</p></div></div>

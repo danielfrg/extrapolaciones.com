@@ -17,47 +17,48 @@ draft: False
 
 <h2>Mejorar un 1% cada día</h2>
 
-- Si mejoras solo un poco cada día en un año serás 37 veces mejor, por otro lado si empeoras en un poco diariamente (no haciendo nada) llegas casi a cero
-  <img alt="image" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fde2253f3-97fa-4cdb-9d29-f9dfab6e4d2b%2FScreen_Shot_2020-09-26_at_19.26.08.png?table=block&id=a0ee8e1b-4568-440e-bd47-1b794261ebcb&userId=&cache=v2" style="width: 432px" />
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Si mejoras solo un poco cada día en un año serás 37 veces mejor, por otro lado si empeoras en un poco diariamente (no haciendo nada) llegas casi a cero</p>
+<img alt="image" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fde2253f3-97fa-4cdb-9d29-f9dfab6e4d2b%2FScreen_Shot_2020-09-26_at_19.26.08.png?table=block&id=a0ee8e1b-4568-440e-bd47-1b794261ebcb&userId=&cache=v2" style="width: 432px" />
 
+</div></div>
 
-
-- Generalmente escuchamos que el tiempo va en nuestra contra, pues esto solo es verdad si no hacemos nada, si hacemos cosas el tiempo va a nuestro favor
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Generalmente escuchamos que el tiempo va en nuestra contra, pues esto solo es verdad si no hacemos nada, si hacemos cosas el tiempo va a nuestro favor</p></div></div>
 
 <h2>Los objetivos son una mierda, crea sistemas</h2>
 
-- Los ganadores y perdedores tienen los mismos objetivos
-  - Yo mismo me he propuesto miles de cosas, solo he logrado unas, por que? porque los objetivos son una mierda. Nunca pensé en los sistemas, los tuve para algunos hábitos pero no fue intencional, tuve suerte
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Los ganadores y perdedores tienen los mismos objetivos</p>
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Yo mismo me he propuesto miles de cosas, solo he logrado unas, por que? porque los objetivos son una mierda. Nunca pensé en los sistemas, los tuve para algunos hábitos pero no fue intencional, tuve suerte</p></div></div>
 
+</div></div>
 
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Alcanzar el objetivo es solamente un cambio momentáneo</p>
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Lo que queremos es cambiar permanentemente</p></div></div>
 
-- Alcanzar el objetivo es solamente un cambio momentáneo
-  - Lo que queremos es cambiar permanentemente 
+</div></div>
 
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Las metas restringen la felicidad</p>
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Siempre decimos: &quot;Cuando logre esto seré feliz&quot;, pues con razón que no lo somos!</p></div></div>
 
+</div></div>
 
-- Las metas restringen la felicidad
-  - Siempre decimos: "Cuando logre esto seré feliz", pues con razón que no lo somos!
-
-
-
-- Las metas no coinciden con el progreso a largo plazo
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Las metas no coinciden con el progreso a largo plazo</p></div></div>
 
 <h2 class="yellow_background">El verdadero cambio de conducta es un cambio de identidad</h2>
 
-> “La forma máxima de motivación intrínseca se da cuando un hábito se convierte en parte integral de tu identidad. Una cosa es decir «soy el tipo de persona que quiere esto»; otra cosa muy distinta es poder decir «soy el tipo de persona que es esto”
+<blockquote><p>“La forma máxima de motivación intrínseca se da cuando un hábito se convierte en parte integral de tu identidad. Una cosa es decir «soy el tipo de persona que quiere esto»; otra cosa muy distinta es poder decir «soy el tipo de persona que es esto”</p>
+</blockquote>
 
 <p>Que buena frase joder. Pensar y centrarme en este punto es lo que me ha funcionado a mi:</p>
 
-- Cuantas mañanas no me levantaba pensando "Tengo que salir a correr o ir al gym porque quiero estar mas delgado", con suerte llegaba a las dos semanas y después solo volvía de vez en cuando. Lo que debería pensar es: "Quiero ser una persona saludable una persona que esta en forma"
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Cuantas mañanas no me levantaba pensando &quot;Tengo que salir a correr o ir al gym porque quiero estar mas delgado&quot;, con suerte llegaba a las dos semanas y después solo volvía de vez en cuando. Lo que debería pensar es: &quot;Quiero ser una persona saludable una persona que esta en forma&quot;</p></div></div>
 
-- Practicaba el ukulele para tocar una canción, medio me salía y lo dejaba por semanas. Ahora pienso: "Quiero ser una persona que toca música"
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Practicaba el ukulele para tocar una canción, medio me salía y lo dejaba por semanas. Ahora pienso: &quot;Quiero ser una persona que toca música&quot;</p></div></div>
 
-- Empezaba a leer un libro, lo terminada o dejaba y no volvía a leer mas. Ahora pienso: "Quiero ser una persona culta y leída", llevo casi un libro por semana hace casi dos meses
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Empezaba a leer un libro, lo terminada o dejaba y no volvía a leer mas. Ahora pienso: &quot;Quiero ser una persona culta y leída&quot;, llevo casi un libro por semana hace casi dos meses</p></div></div>
 
-- He tenido docenas de blogs durante los años que he dejado, este el otro intento que veremos si es mas exitoso, lo que pensé cuando empece fue: "Quiero ser alguien que escribe mejor"
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>He tenido docenas de blogs durante los años que he dejado, este el otro intento que veremos si es mas exitoso, lo que pensé cuando empece fue: &quot;Quiero ser alguien que escribe mejor&quot;</p></div></div>
 
-- Intentaba meditar pensando en ser más feliz, más presente o yo no se que, esta aun no lo hago, es una mierda
+<div class=" list"><div class="li_before"><div class="ul_disc">&bull;</div></div><div class="li_content"><p>Intentaba meditar pensando en ser más feliz, más presente o yo no se que, esta aun no lo hago, es una mierda</p></div></div>
 
 <p>El objetivo se mantiene, por ejemplo yo me imagino en el futuro cuando sea padre (o no) o llegue a viejo o lo que sea quiero ser una persona culta y leída de esas que recomiendan libros. Que tengo que cambiar en mi identidad? bueno, tengo que volverme un lector.</p>
 
@@ -69,18 +70,19 @@ draft: False
 
 <p>La clave esta en buscar como pasamos de un punto al otro, sencillo:</p>
 
-1. Señal: Hacerlo obvio
+<div class=" list"><div class="li_before"><div class="ol_disc">1.</div></div><div class="li_content"><p>Señal: Hacerlo obvio</p></div></div>
 
-2. Anhelo: Hacerlo atractivo
+<div class=" list"><div class="li_before"><div class="ol_disc">2.</div></div><div class="li_content"><p>Anhelo: Hacerlo atractivo</p></div></div>
 
-3. Respuesta: Hacerlo sencillo
+<div class=" list"><div class="li_before"><div class="ol_disc">3.</div></div><div class="li_content"><p>Respuesta: Hacerlo sencillo</p></div></div>
 
-4. Recompensa: Hacerlo satisfactorio (inmediatamente)
+<div class=" list"><div class="li_before"><div class="ol_disc">4.</div></div><div class="li_content"><p>Recompensa: Hacerlo satisfactorio (inmediatamente)</p></div></div>
 
 <p>Hacemos lo opuesto si hay un habito que queremos quitar, volverlo invisible (borrar las apps del celular), hacerlo poco atractivo, hacerlo difícil, hacerlo (inmediatamente) insatisfactorio</p>
 
 <p>Lo ultimo que me pareció interesante es como los genes afectan para lo que somos buenos, lo hacen y no los podemos cambiar pero:</p>
 
-> “Los genes no eliminan la necesidad de trabajar duro. Determinan y muestran lo que hay que hacer. Nos dicen en qué debemos trabajar duro.”
+<blockquote><p>“Los genes no eliminan la necesidad de trabajar duro. Determinan y muestran lo que hay que hacer. Nos dicen en qué debemos trabajar duro.”</p>
+</blockquote>
 
 <p>Esto me recordó bastante como nuestros genes afectan que tan felices podemos ser: ~50% esta determinado los genes. Si tuvimos mala suerte significa que tenemos que trabajar más duro, pero la buena noticia es que probablemente para la mayoría de las cosas solo estemos el promedio.</p>

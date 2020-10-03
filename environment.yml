@@ -9,3 +9,4 @@ dependencies:
   - pip
   - pip:
       - notion
+      - mistune==2.0.0a4

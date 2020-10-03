@@ -9,13 +9,13 @@ draft: False
 
 <img alt="image" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffadcc85f-8a84-4ee9-a65d-327542e80fa4%2Fcover.jpg?table=block&id=426589f8-dc09-452f-91c2-9a13ef2f40d8&userId=&cache=v2" style="width: 1280px" />
 
-<p>Buena parte de mi vida me he considerado un "gamer", los juegos formaban parte de mi personalidad, jugaba, leía y veía videos acerca de ellos, religiosamente seguía E3, Tokyo Game Show y mas eventos, era fiel seguidor de Atomix.vg y otros medios. Eso fue hasta hace unos años cuando dejé de jugar tanto aunque no lo abandone completamente, he jugado RDR2, Zelda BOTW y otros juegos triple-A.</p>
+<p>Buena parte de mi vida me he considerado un &quot;gamer&quot;, los juegos formaban parte de mi personalidad, jugaba, leía y veía videos acerca de ellos, religiosamente seguía E3, Tokyo Game Show y mas eventos, era fiel seguidor de Atomix.vg y otros medios. Eso fue hasta hace unos años cuando dejé de jugar tanto aunque no lo abandone completamente, he jugado RDR2, Zelda BOTW y otros juegos triple-A.</p>
 
 <p>La razón por la cual me aleje no la tengo clara, una obsesión y posterior des-enamoramiento de Dota 2 puede ser una de las razones. En cualquier caso, he querido retomar este hobby y en el último mes jugué Stardew Valley y Celeste.</p>
 
 <p>Después de una corta obsesión de 35 horas en una semana con Stardew Valley (gran farming simulator) quise retomar lo que considero un “juego de verdad” y para mi nada mas juego que un platformer, sabía de Celeste y de su dificultad, no me esperaba para nada una historia y menos la bella lección de que nos deja a todos, hayamos o no sufrido con nuestra salud mental.</p>
 
-<p>La historia del juego puede verse (o leerse) en un video poco menos de [1-2 horas](https://www.youtube.com/watch?v=JIXqmjYF4F4) (aunque se lee mas rápido la verdad), que si lo comparamos con las [11 horas de TLOU2](https://www.youtube.com/watch?v=Iss5bRQ7yVM) bueno ya me dirás, pero el impacto únicamente ocurre cuando lo juegas y acompañas a Madeleine en cada salto, caída y eventual recompensa.</p>
+<p>La historia del juego puede verse (o leerse) en un video poco menos de <a href="https://www.youtube.com/watch?v=JIXqmjYF4F4">1-2 horas</a> (aunque se lee mas rápido la verdad), que si lo comparamos con las <a href="https://www.youtube.com/watch?v=Iss5bRQ7yVM">11 horas de TLOU2</a> bueno ya me dirás, pero el impacto únicamente ocurre cuando lo juegas y acompañas a Madeleine en cada salto, caída y eventual recompensa.</p>
 
 <p>Madeliene es una chica que quiere escalar la montaña Celeste, no sabe muy bien porque, solo sabe que siente esa necesidad, esa necesidad de hacer algo, ese algo que todos hemos sentido que tenemos que hacer cuando estamos atascados y creemos que un gran gesto es justo lo que debemos hacer. Queremos demostrarnos a nosotros mismos que podemos superar esos retos y al mismo tiempo superarnos a nosotros mismos.</p>
 
@@ -25,7 +25,7 @@ draft: False
 
 <p>La representación del ataque de pánico de Madeleine es impresionante, muchas veces he visto esto representado en películas y series como una persona enrollada en una esquida de la habitación, pero en el juego vemos como lo ve y siente Madeleine dentro de su cabeza, vemos la conversación que tiene con ella misma.</p>
 
-<p>La "antagonista" es una parte de Madeleine, una parte que Madeleine no quiere que exista y que toma forma física en la montaña y hace lo posible para que no logre sus objetivos. Justo cuando Madeleine cree que va a poder dejar esa parte de ella libre y atrás es cuando esta la empuja de la montaña y Madeleine toca fondo. El pelearnos con nosotros mismos y forzarnos a cambiar sin aceptarnos solo lo hace todo peor. Nada más real que este pedazo.</p>
+<p>La &quot;antagonista&quot; es una parte de Madeleine, una parte que Madeleine no quiere que exista y que toma forma física en la montaña y hace lo posible para que no logre sus objetivos. Justo cuando Madeleine cree que va a poder dejar esa parte de ella libre y atrás es cuando esta la empuja de la montaña y Madeleine toca fondo. El pelearnos con nosotros mismos y forzarnos a cambiar sin aceptarnos solo lo hace todo peor. Nada más real que este pedazo.</p>
 
 <p>Finalmente, Madeleine se da cuenta que nunca se va a poder deshacer de esa parte de ella pero que puede lograr grandes cosas al intentar entenderse y aceptarse a ella misma. Es en ese momento cuando Madeleine se completa al unirse con la parte de ella y se convierte en la persona que puede llegar a ser, genialmente representada en el juego con el double-dash. Al final Madeleine logra llegar a la cima de la montaña pero lo que entendió de ella misma en el camino fue la verdadera recompensa.</p>
 
