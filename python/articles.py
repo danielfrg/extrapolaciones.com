@@ -39,7 +39,7 @@ def get_video_embed(source):
     return ""
 
 
-def blocks2md(blocks, indent=0):
+def blocks2html(blocks, indent=0):
     output_md = ""
 
     content = ""
@@ -92,7 +92,7 @@ def blocks2md(blocks, indent=0):
             content = f"<p>{content}</p>"
             if block.children:
                 content += "\n"
-                content += blocks2md(block.children)
+                content += blocks2html(block.children)
             content = f'<div class="li_content">{content}</div>'
             new_content = f"<div{attrs}>{disc}{content}</div>"
         elif block_type == "numbered_list":
@@ -101,7 +101,7 @@ def blocks2md(blocks, indent=0):
             content = f"<p>{content}</p>"
             if block.children:
                 content += "\n"
-                content += blocks2md(block.children)
+                content += blocks2html(block.children)
             content = f'<div class="li_content">{content}</div>'
             new_content = f"<div{attrs}>{disc}{content}</div>"
         elif block_type == "to_do":
@@ -130,6 +130,18 @@ def blocks2md(blocks, indent=0):
             new_content = get_video_embed(block.source)
         elif block_type == "divider":
             new_content = f"<hr{attrs}>"
+        elif block_type == "column_list":
+            new_content = '<div class="d-flex flex-row">'
+            for column in block.children:
+                ratio = column.column_ratio
+                col_content = (
+                    f'<div class="notion-column" style="flex: {ratio} {ratio} auto;" >'
+                )
+                col_content += blocks2html(column.children)
+                col_content += f"</div>"
+                new_content += col_content
+            new_content += "</div>"
+        #     continue
         # elif block_type == "bookmark":
         #     new_content = link(content, block.link)
         # elif block_type == "equation":
@@ -172,7 +184,7 @@ def get_md(item):
 
     page_url = item.get_browseable_url()
     page = client.get_block(page_url)
-    body = blocks2md(page.children)
+    body = blocks2html(page.children)
 
     feature_image = featured_image(page.children)
     tags = item.tags
@@ -206,6 +218,7 @@ if __name__ == "__main__":
     generated_dir = os.path.join(this_dir, "..", "content", "articles", "generated")
 
     i = None
+    i = 3
     # i = len(articles) - 1
 
     subset = articles[i : i + 1] if i is not None else articles
