@@ -71,3 +71,10 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_TO_PROD: true
           build_directory: public
+
+      - name: Upload website
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: website
+          path: public
