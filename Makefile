@@ -14,25 +14,13 @@ LOG ?= info
 first: help
 
 # ------------------------------------------------------------------------------
-# Hugo
+# Python
 
-.PHONY: build
-build: npm-build hugo  ## Build site
+env:  ## Create python env
+	mamba env create
 
-
-.PHONY: hugo
-hugo: ## Run hugo build
-	hugo
-
-
-.PHONY: articles
 articles:  ## Make articles from Notion
 	python python/articles.py
-
-
-.PHONY: serve
-serve:  ## Serve website
-	hugo serve -F -D
 
 # ------------------------------------------------------------------------------
 # JS
@@ -49,14 +37,27 @@ npm-dev:  ## Build JS with watch
 	cd $(CURDIR)/js/; npm run dev
 
 # ------------------------------------------------------------------------------
+# Hugo
+
+build: npm-build hugo  ## Build site
+
+
+hugo: ## Run hugo build
+	hugo
+
+serve:  ## Serve website
+	hugo serve
+
+servea-ll:  ## Serve website: includes drafts and future
+	hugo serve -F -D
+
+# ------------------------------------------------------------------------------
 # Other
 
-.PHONY: clean
 clean:  ## Clean build files
 	rm -rf public
 	rm -rf content/articles/generated
 
 
-.PHONY: help
 help:  ## Show this help menu
 	@grep -E '^[0-9a-zA-Z_-]+:.*?##.*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?##"; OFS="\t\t"}; {printf "\033[36m%-30s\033[0m %s\n", $$1, ($$2==""?"":$$2)}'
