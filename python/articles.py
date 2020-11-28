@@ -291,7 +291,8 @@ if __name__ == "__main__":
     # Obtain the `token_v2` value by inspecting your browser cookies on a logged-in session on Notion.so
     token = os.environ.get("NOTION_TOKEN", "")
     table_url = os.environ.get("NOTION_TABLE_URL", "")
-    print(table_url)
+    print(table_url is None)
+    print(table_url == "")
     client = NotionClient(token_v2=token)
 
     articles = client.get_collection_view(table_url)
