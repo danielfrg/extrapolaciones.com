@@ -2,7 +2,7 @@
 {{ if not (.context.Param "feature_image") }}
 {{ $css_classes = (printf "%s %s" $css_classes "no-image") }}
 {{ end }}
-{{ if (eq (mod .index 6) 0) }}
+{{ if (eq (.index) 0) }}
 {{ $css_classes = printf "%s %s" $css_classes "post-card-large" }}
 {{ end }}
 

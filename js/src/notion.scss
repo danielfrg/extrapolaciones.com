@@ -111,6 +111,12 @@
         max-width: 100%;
     }
 
+    // For YouTube and other embeded content
+    div.notion-video {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
     table {
         display: block;
         width: 100%; // keep for backwards compatibility
