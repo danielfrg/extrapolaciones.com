@@ -3,3 +3,4 @@ mistune==2.0.0a4
 black
 pylint
 ipykernel
+python-slugify

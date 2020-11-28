@@ -10,3 +10,4 @@ dependencies:
   - pip:
       - notion
       - mistune==2.0.0a4
+      - python-slugify

@@ -48,7 +48,7 @@ hugo: ## Run hugo build
 serve:  ## Serve website
 	hugo serve
 
-servea-ll:  ## Serve website: includes drafts and future
+serve-all:  ## Serve website: includes drafts and future
 	hugo serve -F -D
 
 # ------------------------------------------------------------------------------

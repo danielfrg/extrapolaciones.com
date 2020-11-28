@@ -3,6 +3,7 @@ title: "Markdown demo"
 date: 2200-01-01T00:00:00-04:00
 feature_image: https://demo.ghost.io/content/images/size/w1000/2019/10/welcome-to-ghost.png
 summary: All markdown styles demo
+tags: ['Test']
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
