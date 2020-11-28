@@ -273,7 +273,6 @@ def get_md(page):
     tags = page.tags
     published = page.published
     draft = not published
-    print(draft)
 
     return templates.article.format(
         title=title,
@@ -319,7 +318,7 @@ if __name__ == "__main__":
 
         output_dir_ = os.path.join(output_dir, date_dir)
         os.makedirs(output_dir_, exist_ok=True)
-        print(output_dir)
+
         fname = slugify(title) + ".md"
         output_file = os.path.join(output_dir_, fname)
         md_content = get_md(row)
