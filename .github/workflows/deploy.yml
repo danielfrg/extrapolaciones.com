@@ -36,6 +36,7 @@ jobs:
           make articles
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_TABLE_URL: ${{ secrets.NOTION_TABLE_URL }}
 
       - name: Install node
         uses: actions/setup-node@v2-beta

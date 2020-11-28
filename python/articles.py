@@ -291,8 +291,12 @@ if __name__ == "__main__":
     # Obtain the `token_v2` value by inspecting your browser cookies on a logged-in session on Notion.so
     token = os.environ.get("NOTION_TOKEN", "")
     table_url = os.environ.get("NOTION_TABLE_URL", "")
-    print(table_url is None)
-    print(table_url == "")
+
+    assert token is not None
+    assert token != ""
+    assert table_url is not None
+    assert table_url != ""
+
     client = NotionClient(token_v2=token)
 
     articles = client.get_collection_view(table_url)
@@ -310,7 +314,7 @@ if __name__ == "__main__":
 
     for row in subset:
         title = row.name
-        print(title)
+        print("Generating:", title)
         date_dir = str(row.publish_date.start.year) if row.publish_date else "drafts"
 
         output_dir_ = os.path.join(output_dir, date_dir)
