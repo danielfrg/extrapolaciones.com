@@ -29,6 +29,7 @@ npm-build:  ## Build JS
 	cd $(CURDIR)/js/; npm run build
 
 
+npm-i: npm-install
 npm-install:  ## Install JS dependencies
 	cd $(CURDIR)/js/; npm install
 
