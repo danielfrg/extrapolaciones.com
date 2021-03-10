@@ -264,7 +264,7 @@ def get_md(page):
     date_str = date.strftime("%Y-%m-%d")
 
     page_url = page.get_browseable_url()
-    page = client.get_block(page_url)
+    page = client.get_block(page_url, limit=100)
     body = blocks2html(page.children)
     # body = f'<div class="notion-page">\n{body}\n</div>'
 
@@ -299,7 +299,7 @@ if __name__ == "__main__":
     client = NotionClient(token_v2=token)
 
     articles = client.get_collection_view(table_url)
-    articles = articles.collection.get_rows()
+    articles = articles.collection.get_rows(limit=100)
 
     this_dir = os.path.dirname(os.path.realpath(__file__))
     output_dir = os.path.join(this_dir, "..", "content", "articles", "generated-notion")

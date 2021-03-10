@@ -29,6 +29,8 @@ jobs:
           pip --version
           python -m pip install --upgrade pip
           pip install -U -r requirements.txt
+          # Temp fix:
+          pip install git+https://github.com/c0j0s/notion-py
           pip freeze
 
       - name: Make articles
