@@ -112,7 +112,6 @@ main.post-feed {
         }
 
         h2 {
-            font-family: "Source Serif Pro", serif;
             font-size: 1.5rem;
             font-weight: 600;
         }
@@ -190,19 +189,19 @@ main.post-feed {
 }
 
 main.article {
-    max-width: 700px;
-    font-family: "Source Serif Pro", serif;
+    max-width: 704px;
     margin: 0 auto 70px;
     padding: 15px 10px;
 
     header {
-        margin-bottom: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
 
         h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin: 0;
             padding-bottom: 0;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
         }
 
         p.summary {
@@ -211,33 +210,41 @@ main.article {
                 "Segoe UI Emoji", "Segoe UI Symbol";
             color: #666;
             font-style: italic;
-            padding-top: 0;
-        }
-
-        .byline {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                Helvetica, Arial, sans-serif, "Apple Color Emoji",
-                "Segoe UI Emoji", "Segoe UI Symbol";
-            font-size: 0.85em;
-            color: #757575;
-
-            .author {
-                color: #000;
-            }
-
-            .date {
-                color: #757575;
-            }
-
-            .bull {
-                color: #757575;
-            }
+            font-size: 1.2em;
+            padding-top: 20px;
+            text-align: center;
         }
     }
 
     .notion-page {
-        font-family: "Source Serif Pro", serif;
-        font-size: 1.2rem;
+        // font-family: "Source Serif Pro", serif;
+        font-size: 1.1rem;
+
+        a {
+            color: rgb(3, 102, 214);
+        }
+    }
+
+    .byline {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+            "Segoe UI Symbol";
+        font-size: 0.85em;
+        color: #757575;
+        margin: 50px auto;
+        text-align: center;
+
+        .author {
+            color: #000;
+        }
+
+        .date {
+            color: #757575;
+        }
+
+        .bull {
+            color: #757575;
+        }
     }
 }
 
@@ -245,12 +252,12 @@ footer.site-footer {
     padding: 10px 0 20px;
     margin-top: 50px;
     // margin-top: auto;
-    background: #000;
-    color: #cccccc;
+    // background: #000;
+    color: rgb(117, 117, 117);
     font-size: 0.85em;
 
     .container {
-        max-width: 960px;
+        max-width: 704px;
     }
 
     .col-md-6 {
@@ -258,17 +265,16 @@ footer.site-footer {
     }
 
     a {
-        color: #fff;
+        color: rgb(117, 117, 117);
 
         &:hover {
-            opacity: 0.6;
-            text-decoration: none;
+            text-decoration: underline;
         }
     }
 
-    .copyright {
-        @media (min-width: 576px) {
-            text-align: right;
-        }
-    }
+    // .copyright {
+    //     @media (min-width: 576px) {
+    //         text-align: right;
+    //     }
+    // }
 }

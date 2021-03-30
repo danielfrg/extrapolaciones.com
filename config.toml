@@ -1,15 +1,26 @@
 title = "Extrapolaciones"
 baseURL = "/"
 languageCode = "es"
-theme = "website"
+theme = "theme"
+themesDir = "."
 summaryLength = 25
+
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+pygmentsCodefencesGuessSyntax = true
 
 [permalinks]
   articles = "posts/:year/:month/:title/"
 
+[outputs]
+home = [ "HTML", "RSS" ]
+
+[markup.goldmark.renderer]
+unsafe = true
+
 [params]
   author = "Daniel Rodriguez"
-  description = "- entre -"
+  description = ""
 
 [taxonomies]
   tag = "tags"
@@ -35,6 +46,3 @@ summaryLength = 25
     name = "Twitter"
     url = "https://twitter.com/danielfrg"
     weight = 10
-
-[markup.goldmark.renderer]
-unsafe= true

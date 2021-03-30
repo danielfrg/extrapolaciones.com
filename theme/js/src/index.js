@@ -16,6 +16,3 @@ const zoomDefault = mediumZoom("article.post img", {
     scrollOffset: 0,
     margin: 30,
 });
-
-// React components
-import MissYouOrderWords from "./MissYou";

@@ -75,4 +75,7 @@ function App() {
     }
 }
 
-render(<App />, document.getElementById("react-miss-you-sortable"));
+const el = document.getElementById("react-miss-you-sortable");
+if (el) {
+    render(<App />, el);
+}

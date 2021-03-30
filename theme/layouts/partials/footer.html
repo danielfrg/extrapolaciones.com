@@ -1,7 +1,11 @@
 <footer class="site-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
+    <div class="container mx-auto">
+        <div class="row justify-content-center">
+            <p>
+                <a href="{{ .Site.BaseURL }}">Inicio</a>
+            </p>
+            </div>
+            <!-- <div class="col-md-6">
                 <nav class="site-footer-nav">
                     <a href="{{ .Site.BaseURL }}">Inicio</a>
                     {{ range $.Site.Menus.footer }}
@@ -11,12 +15,18 @@
                     {{ if .Site.Params.twitter }}<a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener">Twitter</a>{{ end }}
                     {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Github</a>{{ end }}
                 </nav>
+            </div> -->
+            <div class="row justify-content-center">
+                <p class="copyright">{{ .Site.Title }} &copy; 2021</p>
             </div>
-            <div class="col-md-6">
-                <section class="copyright">{{ .Site.Title }} &copy; {{ .Date.Format "2006" }}</section>
-            </div>
-        </div>
+        <!-- </div> -->
     </div>
 </footer>
 
+<!-- From: https://github.com/francoischalifour/medium-zoom -->
+<script src="/js/medium-zoom.min.js"></script>
+<!-- From: https://github.com/bryanbraun/anchorjs -->
+<script src="/js/anchor.min.js"></script>
+
+<!-- Our JS -->
 <script src="/dist/main.js"></script>

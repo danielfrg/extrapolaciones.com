@@ -40,16 +40,19 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_TABLE_URL: ${{ secrets.NOTION_TABLE_URL }}
 
-      - name: Install node
+      - name: Install NodeJS
         uses: actions/setup-node@v2-beta
         with:
           node-version: "12"
 
-      - name: Install JS deps
-        run: make npm-install
-
-      - name: Build JS
+      - name: Install theme JS deps
         run: |
+          cd theme
+          make npm-install
+
+      - name: Build theme
+        run: |
+          cd theme
           make npm-build
 
       - name: Setup Hugo
