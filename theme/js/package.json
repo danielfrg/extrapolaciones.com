@@ -30,6 +30,10 @@
         "test:update": "jest -u",
         "test:watch": "jest --watch"
     },
+    "dependencies": {
+        "anchor-js": "^4.3.0",
+        "medium-zoom": "^1.0.6"
+    },
     "devDependencies": {
         "@babel/core": "^7.10.2",
         "@babel/plugin-proposal-class-properties": "^7.4.0",

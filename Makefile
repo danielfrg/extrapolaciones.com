@@ -14,13 +14,15 @@ LOG ?= info
 first: help
 
 # ------------------------------------------------------------------------------
-# Python
+# Python (Notion)
 
 env:  ## Create python env
 	mamba env create
 
+
 articles:  ## Make articles from Notion
 	python python/articles.py
+
 
 # ------------------------------------------------------------------------------
 # JS
@@ -37,12 +39,15 @@ npm-install:  ## Install JS dependencies
 npm-dev:  ## Build JS with watch
 	cd $(CURDIR)/js/; npm run dev
 
-cleanall-js: clean-js  ## Clean JS files
-	rm -rf $(CURDIR)/js/node_modules
 
 clean-js:  ## Clean JS files
 	rm -rf $(CURDIR)/js/dist
 	rm -rf $(CURDIR)/static/dist/*
+
+
+cleanall-js: clean-js  ## Clean JS files
+	rm -rf $(CURDIR)/js/node_modules
+
 
 # ------------------------------------------------------------------------------
 # Hugo
@@ -53,11 +58,14 @@ build: npm-build hugo  ## Build site
 hugo: ## Run hugo build
 	hugo
 
+
 serve:  ## Serve website
 	hugo serve
 
+
 serve-all:  ## Serve website: includes drafts and future
 	hugo serve -F -D
+
 
 # ------------------------------------------------------------------------------
 # Other

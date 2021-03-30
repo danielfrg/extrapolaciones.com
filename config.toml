@@ -1,5 +1,5 @@
 title = "Extrapolaciones"
-baseURL = "/"
+baseURL = "http://extrapolaciones.com"
 languageCode = "es"
 theme = "theme"
 themesDir = "."

@@ -61,13 +61,14 @@ var rules = [
     },
 ];
 
-var distRoot = path.resolve(__dirname, "..", "..", "..", "static", "dist");
+var distRoot = path.resolve(__dirname, "..", "..", "static", "theme");
 
 module.exports = [
     {
         entry: [path.resolve(__dirname, "src", "index.js")],
         output: {
             path: distRoot,
+            filename: "bundle.js",
         },
         module: { rules: rules },
         node: {
@@ -85,7 +86,7 @@ module.exports = [
             //     inject: true,
             // }),
             new MiniCssExtractPlugin({
-                filename: "index.css",
+                filename: "theme.css",
             }),
         ],
     },

@@ -29,13 +29,14 @@ npm-dev:  ## Build JS with watch
 	cd $(CURDIR)/js/; npm run dev
 
 
-cleanall-js: clean-js  ## Clean JS files
-	rm -rf $(CURDIR)/js/node_modules
-
-
 clean-js:  ## Clean JS files
 	rm -rf $(CURDIR)/js/dist
-	rm -rf $(CURDIR)/static/dist/*
+	rm -rf $(CURDIR)/../static/theme/*
+
+
+cleanall-js: clean-js  ## Clean All JS files
+	rm -rf $(CURDIR)/js/node_modules
+
 
 # ------------------------------------------------------------------------------
 # Other
