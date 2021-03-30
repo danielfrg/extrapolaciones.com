@@ -37,6 +37,13 @@ npm-install:  ## Install JS dependencies
 npm-dev:  ## Build JS with watch
 	cd $(CURDIR)/js/; npm run dev
 
+cleanall-js: clean-js  ## Clean JS files
+	rm -rf $(CURDIR)/js/node_modules
+
+clean-js:  ## Clean JS files
+	rm -rf $(CURDIR)/js/dist
+	rm -rf $(CURDIR)/static/dist/*
+
 # ------------------------------------------------------------------------------
 # Hugo
 

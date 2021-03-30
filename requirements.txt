@@ -1,4 +1,5 @@
 # notion
+git+https://github.com/c0j0s/notion-py
 mistune==2.0.0a4
 black
 pylint

@@ -149,6 +149,7 @@ def p(block):
 def blockquote(block):
     attrs = make_attrs(block)
     content = clean_content(block)
+    content = f"<p>{content}</p>"
     return f"<blockquote{attrs}>{content}</blockquote>"
 
 
@@ -156,6 +157,12 @@ def code(block):
     # Code blocks cannot have color
     language = block.language
     content = block.title
+
+    embed_keyword = "// NOTION-EMBED"
+    if language.lower() == "javascript" and content.startswith(embed_keyword):
+        content = content.strip(embed_keyword)
+        return f"{content}"
+
     return f"```{language}\n{content}\n```"
 
 
@@ -287,9 +294,12 @@ def get_md(page):
 
 
 if __name__ == "__main__":
+    import re
+
     # Obtain the `token_v2` value by inspecting your browser cookies on a logged-in session on Notion.so
     token = os.environ.get("NOTION_TOKEN", "")
     table_url = os.environ.get("NOTION_TABLE_URL", "")
+    article_filter = os.environ.get("NOTION_ARTICLE_FILTER", "")
 
     assert token is not None
     assert token != ""
@@ -298,8 +308,9 @@ if __name__ == "__main__":
 
     client = NotionClient(token_v2=token)
 
-    articles = client.get_collection_view(table_url)
-    articles = articles.collection.get_rows(limit=100)
+    print("Notion table:", table_url)
+    collection_view = client.get_collection_view(table_url)
+    articles = collection_view.collection.get_rows(limit=100)
 
     this_dir = os.path.dirname(os.path.realpath(__file__))
     output_dir = os.path.join(this_dir, "..", "content", "articles", "generated-notion")
@@ -313,6 +324,10 @@ if __name__ == "__main__":
 
     for row in subset:
         title = row.name
+
+        if article_filter and article_filter != title:
+            continue
+
         print("Generating:", title)
         date_dir = str(row.publish_date.start.year) if row.publish_date else "drafts"
 
