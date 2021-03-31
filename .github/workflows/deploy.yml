@@ -20,6 +20,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
       - run: git fetch --prune --unshallow
 
       - name: Setup Python ${{ matrix.python-version }}
@@ -54,6 +56,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Make theme
+        run: |
+          make theme
 
       - name: Install JS deps
         run: |
