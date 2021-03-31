@@ -30,6 +30,10 @@ articles:  ## Make articles from Notion
 # ------------------------------------------------------------------------------
 # JS
 
+theme-npm-install:  # Build theme from danielfrg.com
+	cd $(CURDIR)/danielfrg.com/theme/js; npm install
+
+
 theme:  # Build theme from danielfrg.com
 	cd $(CURDIR)/danielfrg.com/theme/js; npm run build
 
