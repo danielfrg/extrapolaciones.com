@@ -70,25 +70,25 @@ jobs:
         with:
           hugo-version: ${{ matrix.hugo-version }}
 
-      - name: Build docs
+      - name: Build website
         run: |
           make hugo
 
-      - name: Push docs (branch)
-        uses: jsmrcaga/action-netlify-deploy@master
-        if: github.event_name == 'pull_request'
-        with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          build_directory: public
-
-      - name: Push docs (master)
+      - name: Push website (master)
         uses: jsmrcaga/action-netlify-deploy@master
         if: (github.event_name != 'pull_request') && endsWith(github.ref, '/master')
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_TO_PROD: true
+          build_directory: public
+
+      - name: Push website (branch)
+        uses: jsmrcaga/action-netlify-deploy@master
+        if: github.event_name == 'pull_request'
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           build_directory: public
 
       - name: Upload website
