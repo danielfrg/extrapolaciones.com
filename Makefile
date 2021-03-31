@@ -30,6 +30,10 @@ articles:  ## Make articles from Notion
 # ------------------------------------------------------------------------------
 # JS
 
+theme:  # Build theme from danielfrg.com
+	cd $(CURDIR)/danielfrg.com/theme/js; npm run build
+
+
 npm-build:  ## Build JS
 	cd $(CURDIR)/js/; npm run build
 
@@ -55,7 +59,6 @@ cleanall-js: clean-js  ## Clean JS files
 # ------------------------------------------------------------------------------
 # Hugo
 
-
 hugo: ## Run hugo build
 	hugo
 
@@ -68,10 +71,10 @@ serve:  ## Serve website
 
 clean:  ## Clean build files
 	rm -rf public
-	rm -rf content/articles/generated
+	rm -rf content/articles/generated-notion
 
 
-cleanall: cleanall-js   ## Clean everything
+cleanall: clean cleanall-js   ## Clean everything
 
 
 help:  ## Show this help menu

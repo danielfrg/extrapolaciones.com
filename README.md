@@ -5,3 +5,6 @@
 Source for [extrapolaciones.com](extrapolaciones.com).
 
 The content of the website is generated from [Notion](https://www.notion.so/) pages.
+
+The theme for this website is the same as [danielfrg.com](https://danielfrg.com)
+so we add that [github.com/danielfrg/danielfrg.com] as a submodule.

@@ -210,7 +210,10 @@ def todo(block):
 def img(block):
     name = ""
     url = get_img_link(block)
-    width = block.get()["format"]["block_width"]
+    block = block.get()
+    width = None
+    if "format" in block:
+        width = block["format"]["block_width"]
     attrs = make_attrs(block, width=width)
     return f'<img alt="{name}" src="{url}" {attrs} />'
 
@@ -218,7 +221,14 @@ def img(block):
 def get_img_link(block):
     image_block = block.get()
     block_id = image_block["id"]
-    url_quote = quote_plus(image_block["format"]["display_source"])
+
+    # if "format" in image_block:
+    # img_url = image_block["format"]["display_source"]
+    # elif "properties" in image_block:
+    #     img_url = image_block["properties"]["source"]
+
+    img_url = image_block["format"]["display_source"]
+    url_quote = quote_plus(img_url)
 
     notion_img_template = (
         "https://www.notion.so/image/{url}?table=block&id={id}&userId=&cache=v2"

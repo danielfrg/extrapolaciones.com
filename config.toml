@@ -3,7 +3,7 @@ title = "Extrapolaciones"
 languageCode = "es"
 
 theme = "theme"
-themesDir = "."
+themesDir = "./danielfrg.com"
 summaryLength = 25
 
 pygmentsCodeFences = true
@@ -23,24 +23,16 @@ unsafe = true
   tag = "tags"
 
 [params]
+  description = "Daniel Rodriguez website and blog about data science, apps and open source projects"
+  keywords = "Daniel Rodriguez, danielfrg, Python, Data, Science, Kubernetes"
   author = "Daniel Rodriguez"
-  description = ""
+  index = "grid"
 
 [menu]
-  [[menu.main]]
-    identifier = "home"
-    name = "Inicio"
-    url = "/"
-    weight = 10
-#   [[menu.main]]
-#     identifier = "about"
-#     name = "About"
-#     url = "/about/"
-#     weight = 20
-  [[menu.second]]
+  [[menu.header]]
     identifier = "twitter"
     name = "@danielfrg"
-    url = "https://twitter.com/danielfrg"
+    url = "https://danielfrg.com"
     weight = 10
   [[menu.footer]]
     identifier = "home"

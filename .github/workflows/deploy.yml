@@ -22,18 +22,22 @@ jobs:
       - uses: actions/checkout@v2
       - run: git fetch --prune --unshallow
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install Python dependencies
+      - name: Print Python versions
         run: |
           which python
           which pip
           python --version
           pip --version
+
+      - name: Install Python dependencies
+        run: |
           python -m pip install --upgrade pip
+          pip --version
           pip install -U -r requirements.txt
           # Temp fix for: https://github.com/jamalex/notion-py/issues/292
           pip install git+https://github.com/danielfrg/notion-py
@@ -46,12 +50,12 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_TABLE_URL: ${{ secrets.NOTION_TABLE_URL }}
 
-      - name: Install NodeJS ${{ matrix.node-version }}
+      - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install theme JS deps
+      - name: Install JS deps
         run: |
           cd theme
           make npm-install
