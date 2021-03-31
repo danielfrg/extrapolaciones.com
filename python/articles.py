@@ -308,10 +308,8 @@ if __name__ == "__main__":
 
     # Obtain the `token_v2` value by inspecting your browser cookies on a logged-in session on Notion.so
     token = os.environ.get("NOTION_TOKEN", "")
-    table_url = os.environ.get(
-        "NOTION_TABLE_URL",
-        "https://www.notion.so/danielfrg/4ea205b9d24140e3867c64449d132a37\?v\=2aac44ef63ff4c6b9e83b93454e506e2",
-    )
+    table_url = os.environ.get("NOTION_TABLE_URL")
+    table_url = "https://www.notion.so/danielfrg/4ea205b9d24140e3867c64449d132a37\?v\=2aac44ef63ff4c6b9e83b93454e506e2"
     article_filter = os.environ.get("NOTION_ARTICLE_FILTER", "")
 
     assert token is not None
