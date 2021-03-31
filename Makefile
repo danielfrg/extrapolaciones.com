@@ -13,6 +13,9 @@ LOG ?= info
 
 first: help
 
+build: npm-build hugo  ## Build site
+
+
 # ------------------------------------------------------------------------------
 # Python (Notion)
 
@@ -52,20 +55,13 @@ cleanall-js: clean-js  ## Clean JS files
 # ------------------------------------------------------------------------------
 # Hugo
 
-build: npm-build hugo  ## Build site
-
 
 hugo: ## Run hugo build
 	hugo
 
 
 serve:  ## Serve website
-	hugo serve
-
-
-serve-all:  ## Serve website: includes drafts and future
 	hugo serve -F -D
-
 
 # ------------------------------------------------------------------------------
 # Other
@@ -73,6 +69,9 @@ serve-all:  ## Serve website: includes drafts and future
 clean:  ## Clean build files
 	rm -rf public
 	rm -rf content/articles/generated
+
+
+cleanall: cleanall-js   ## Clean everything
 
 
 help:  ## Show this help menu

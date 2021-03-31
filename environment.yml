@@ -3,10 +3,17 @@ channels:
   - conda-forge
 dependencies:
   - python=3.8
-  - black
-  - pylint
-  - ipykernel
   - pip
+
+  # Development deps
+  - pylint
+  - flake8
+  - black
+  - isort
+
+  # Other deps
+  - ipykernel
+
   - pip:
       - notion
       - mistune==2.0.0a4

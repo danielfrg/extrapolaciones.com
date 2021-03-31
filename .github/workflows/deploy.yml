@@ -12,14 +12,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        python-version: [3.8]
+        node-version: ["12"]
+        hugo-version: ["0.74.2"]
+
     steps:
       - uses: actions/checkout@v2
       - run: git fetch --prune --unshallow
 
-      - name: Set up Python
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: ${{ matrix.python-version }}
 
       - name: Install Python dependencies
         run: |
@@ -40,10 +46,10 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_TABLE_URL: ${{ secrets.NOTION_TABLE_URL }}
 
-      - name: Install NodeJS
-        uses: actions/setup-node@v2-beta
+      - name: Install NodeJS ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
         with:
-          node-version: "12"
+          node-version: ${{ matrix.node-version }}
 
       - name: Install theme JS deps
         run: |
@@ -55,10 +61,10 @@ jobs:
           cd theme
           make npm-build
 
-      - name: Setup Hugo
+      - name: Setup Hugo ${{ matrix.hugo-version }}
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.74.2"
+          hugo-version: ${{ matrix.hugo-version }}
 
       - name: Build docs
         run: |

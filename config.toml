@@ -1,6 +1,7 @@
-title = "Extrapolaciones"
 baseURL = "http://extrapolaciones.com"
+title = "Extrapolaciones"
 languageCode = "es"
+
 theme = "theme"
 themesDir = "."
 summaryLength = 25
@@ -10,7 +11,7 @@ pygmentsUseClasses = true
 pygmentsCodefencesGuessSyntax = true
 
 [permalinks]
-  articles = "posts/:year/:month/:title/"
+  articles = "/:year/:month/:title/"
 
 [outputs]
 home = [ "HTML", "RSS" ]
@@ -18,12 +19,12 @@ home = [ "HTML", "RSS" ]
 [markup.goldmark.renderer]
 unsafe = true
 
+[taxonomies]
+  tag = "tags"
+
 [params]
   author = "Daniel Rodriguez"
   description = ""
-
-[taxonomies]
-  tag = "tags"
 
 [menu]
   [[menu.main]]
@@ -42,7 +43,7 @@ unsafe = true
     url = "https://twitter.com/danielfrg"
     weight = 10
   [[menu.footer]]
-    identifier = "twitter"
-    name = "Twitter"
-    url = "https://twitter.com/danielfrg"
+    identifier = "home"
+    name = "Inicio"
+    url = "/"
     weight = 10
