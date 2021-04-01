@@ -1,5 +1,5 @@
 import { render } from "react-dom";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import {
     DndContext,
     closestCenter,
@@ -38,9 +38,9 @@ function App() {
         a.length === b.length && a.every((v, i) => v === b[i]);
 
     const items2 = items.map((x) => x.replace("_", ""));
-    console.log(items2);
+    let hiddenComps = null;
     if (equals(items2, solution)) {
-        console.log("WIN");
+        hiddenComps = <a href="/blog/2021/04/una-nit/">Una nit</a>;
     }
 
     return (
@@ -58,6 +58,7 @@ function App() {
                     <SortableItem key={id} id={id} text={id} />
                 ))}
             </SortableContext>
+            {hiddenComps}
         </DndContext>
     );
 

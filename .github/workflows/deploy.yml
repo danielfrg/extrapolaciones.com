@@ -57,13 +57,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install JS deps (Theme)
+      - name: Build JS (theme)
         run: |
           make theme-npm-install
-
-      - name: Build theme
-        run: |
           make theme
+
+      - name: Build JS (site apps)
+        run: |
+          make npm-install
+          make npm-build
 
       - name: Setup Hugo ${{ matrix.hugo-version }}
         uses: peaceiris/actions-hugo@v2

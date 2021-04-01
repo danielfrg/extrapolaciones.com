@@ -11,7 +11,7 @@ pygmentsUseClasses = true
 pygmentsCodefencesGuessSyntax = true
 
 [permalinks]
-  articles = "/:year/:month/:title/"
+  articles = "blog/:year/:month/:title/"
 
 [outputs]
 home = [ "HTML", "RSS" ]
@@ -23,17 +23,19 @@ unsafe = true
   tag = "tags"
 
 [params]
-  description = "Daniel Rodriguez website and blog about data science, apps and open source projects"
-  keywords = "Daniel Rodriguez, danielfrg, Python, Data, Science, Kubernetes"
-  author = "Daniel Rodriguez"
+  description = "Extrapolaciones"
+  keywords = "Extrapolaciones"
+  author = "Yo"
   index = "grid"
+  include_js = ["/dist/main.js"]
+  include_css = ["/dist/index.css"]
 
 [menu]
-  [[menu.header]]
-    identifier = "twitter"
-    name = "@danielfrg"
-    url = "https://danielfrg.com"
-    weight = 10
+  # [[menu.header]]
+  #   identifier = "twitter"
+  #   name = "@danielfrg"
+  #   url = "https://danielfrg.com"
+  #   weight = 10
   [[menu.footer]]
     identifier = "home"
     name = "Inicio"
