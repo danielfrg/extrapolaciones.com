@@ -9,6 +9,7 @@ summaryLength = 25
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 pygmentsCodefencesGuessSyntax = true
+googleAnalytics = "UA-35523657-7"
 
 [permalinks]
   articles = "blog/:year/:month/:title/"
