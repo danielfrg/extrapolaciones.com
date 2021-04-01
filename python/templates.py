@@ -7,6 +7,7 @@ feature_image: {feature_image}
 summary: {summary}
 tags: {tags}
 draft: {draft}
+hidden: {hidden}
 ---
 
 {body}

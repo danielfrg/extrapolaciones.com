@@ -290,6 +290,7 @@ def get_md(page):
     tags = page.tags
     published = page.published
     draft = not published
+    hidden = page.hidden
 
     return templates.article.format(
         title=title,
@@ -299,6 +300,7 @@ def get_md(page):
         summary=summary,
         tags=tags,
         draft=draft,
+        hidden=hidden,
         body=body,
     ).strip()
 

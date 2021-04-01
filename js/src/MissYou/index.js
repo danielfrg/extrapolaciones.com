@@ -22,9 +22,9 @@ function App() {
     const solution = ["Maple", "Citrus", "Rose", "Classic", "Citrus"];
     const [items, setItems] = useState([
         "Citrus",
+        "Citrus_",
         "Classic",
         "Maple",
-        "Citrus_",
         "Rose",
     ]);
     const sensors = useSensors(
