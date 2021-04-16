@@ -5,11 +5,6 @@ SHELL := bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-PWD := $(shell pwd)
-
-YES ?= 0
-LOG ?= info
-
 
 first: help
 
@@ -30,7 +25,7 @@ articles:  ## Make articles from Notion
 # ------------------------------------------------------------------------------
 # JS
 
-theme-npm-install:  # Build theme from danielfrg.com
+theme-install:  # Build theme from danielfrg.com
 	cd $(CURDIR)/danielfrg.com/theme/js; npm install
 
 

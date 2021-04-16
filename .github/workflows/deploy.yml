@@ -59,7 +59,7 @@ jobs:
 
       - name: Build JS (theme)
         run: |
-          make theme-npm-install
+          make theme-install
           make theme
 
       - name: Build JS (site apps)
